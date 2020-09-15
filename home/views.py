@@ -23,13 +23,13 @@ def ussdapp(request):
         response =""
 
         if text =='':
-            response ="CON Welcome to ida technology USSD app \n"
-            response +="1. Girls in code \n"
-            response +="2. sdf program"
+            response ="CON  Culture app \n"
+            response +="1. English \n"
+            response +="2. Kinyarwanda"
         elif text =="1" :
-            response ="CON you selected Girls in code program \n" 
-            response +="1. Join the program \n"
-            response +="2. Get activity \n"
+            response ="CON Welcome to Rwandan Culture app \n" 
+            response +="1. Register to have account(sign in) \n"
+            response +="2. Go Back \n"
             response +="3. leave"
         elif text == "1*1":
             response ="CON Enter your name"   
