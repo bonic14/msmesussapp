@@ -44,10 +44,17 @@ def ussdapp(request):
             response ="CON Enter your pincode"
             #====================Girls end==================
         elif text =='2':
-            response ="CON Welcome to Girls in code program "+str(level[0])+"\n"
-            response +="1. Join the program \n"
-            response +="2. Get activity \n"
-            response +="3. Leave"
+            response ="CON Urukaza neza kurubuga rw'umuco nyarwanda "+str(level[0])+"\n"
+            response +="1. funguza konti shya(iyandikishe) \n"
+            response +="2. injira kurubuga \n"
+            response +="3. Gusubira inyuma"
+        elif text == '2*1':
+            response ="CON shyiramo email "+str(len(level))+"\n"
+        elif numb =='2*1' and int(len(level))==3 and str(level[2]) in str(level):
+            response ="CON shyiramo umubare wibanga "
+        elif numb =='2*1' and  int(len(level))==4 and str(level[3]) in str(level):
+            response ="CON Enter your pincode"    
+           
     
 
         else:
