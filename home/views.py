@@ -27,7 +27,7 @@ def ussdapp(request):
             response +="1. English \n"
             response +="2. Kinyarwanda"
         elif text =="1" :
-            response ="CON Welcome to Rwandan Culture app "+str(level)+"\n" 
+            response ="CON Welcome to Rwandan Culture app "+str(len(level))+"\n" 
             response +="1. Register to have account(sign in) \n"
             response +="2. Go Back \n"
             
