@@ -27,14 +27,16 @@ def ussdapp(request):
             response +="1. English \n"
             response +="2. Kinyarwanda"
         elif text =="1" :
-            response ="CON Welcome to Rwandan Culture app \n" 
+            response ="CON Welcome to Rwandan Culture app "+str(level[0])" \n" 
             response +="1. Register to have account(sign in) \n"
             response +="2. Go Back \n"
-            response +="3. leave"
+            
         elif text == "1*1":
-            response ="CON Enter your name"   
+            response ="CON Enter your email or number \n"   
+        elif len (level)==2 and level[1] in level:
+             response ="write your email as ..........@gmail.com" 
         elif text == "1*2":
-            response ="CON Enter your pincode"  
+            response ="CON login \n"  
         elif text == "1*3":
                 response ="CON Enter your pincode"   
         elif text =="2" :
