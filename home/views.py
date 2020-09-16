@@ -14,34 +14,41 @@ def Product(request):
 @csrf_exempt
 def ussdapp(request):
     if request.method == 'POST':
-        ## mandatory
-        session_id = request.POST.get("sessionid")
-        service_code = request.POST.get("servicecode")
-        phone_number =request.POST.get("phonenumber")
+          ## mandatory
+        session_id = request.POST.get("sessionId")
+        service_code = request.POST.get("serviceCode")
+        phone_number =request.POST.get("phoneNumber")
         text = request.POST.get("text")
         level = text.split('*')
         response =""
-
+        numb = text[:3]
         if text =='':
-            response ="CON  Culture app \n"
-            response +="1. English \n"
-            response +="2. Kinyarwanda"
-        elif text =="1" :
-            response ="CON Welcome to Rwandan Culture app \n" 
-            response +="1. Register to have account(sign in) \n"
-            response +="2. Go Back \n"
-            
-        elif text == "1*1":
-            response ="CON Enter your email or number \n"   
-        elif text == "1*2":
-            response ="CON login \n"  
-        elif text == "1*3":
-                response ="CON Enter your pincode"   
-        elif text =="2" :
-            response ="CON you selected Girls in code program \n" 
+            response = "CON Welcome to ida technology USSD app \n "
+            response +="1. Girls in code \n"
+            response +="2. Sdf program "
+        elif text =='1':
+            response ="CON Welcome to Girls in code program "+str(len(level))+"\n"
             response +="1. Join the program \n"
             response +="2. Get activity \n"
-            response +="3. leave"
+            response +="3. Leave"
+           #===========Girls in
+        elif text == '1*1':
+            response ="CON Enter your name "+str(len(level))+"\n"
+        elif numb =='1*1' and int(len(level))==3 and str(level[2]) in str(level):
+            response ="CON Enter your ID number"
+        elif numb =='1*1' and  int(len(level))==4 and str(level[3]) in str(level):
+            response ="CON Enter your pincode"
+        elif text == '1*2':
+            response ="CON Enter your pincode"
+        elif text == '1*3':
+            response ="CON Enter your pincode"
+            #====================Girls end==================
+        elif text =='2':
+            response ="CON Welcome to Girls in code program "+str(level[0])+"\n"
+            response +="1. Join the program \n"
+            response +="2. Get activity \n"
+            response +="3. Leave"
+    
 
         else:
             response ="END invalid choice"    
