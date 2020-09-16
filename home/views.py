@@ -23,19 +23,19 @@ def ussdapp(request):
         response =""
         numb = text[:3]
         if text =='':
-            response = "CON Welcome to ida technology USSD app \n "
-            response +="1. Girls in code \n"
-            response +="2. Sdf program "
+            response = "CON Welcome to Rwandan Culture USSD app \n "
+            response +="1. English \n"
+            response +="2. Kinyarwanda"
         elif text =='1':
-            response ="CON Welcome to Girls in code program "+str(len(level))+"\n"
-            response +="1. Join the program \n"
-            response +="2. Get activity \n"
-            response +="3. Leave"
+            response ="CON Welcome to Rwandan Culture platform "+str(len(level))+"\n"
+            response +="1. Register to have account(sigin) \n"
+            response +="2. Login \n"
+            response +="3. Go Black"
            #===========Girls in
         elif text == '1*1':
-            response ="CON Enter your name "+str(len(level))+"\n"
+            response ="CON Enter your email or phone number "+str(len(level))+"\n"
         elif numb =='1*1' and int(len(level))==3 and str(level[2]) in str(level):
-            response ="CON Enter your ID number"
+            response ="CON Enter your password "
         elif numb =='1*1' and  int(len(level))==4 and str(level[3]) in str(level):
             response ="CON Enter your pincode"
         elif text == '1*2':
