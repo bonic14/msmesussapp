@@ -34,11 +34,11 @@ def ussdapp(request):
         elif text == "1*1":
             response ="CON Enter your email or number \n"   
         elif len (level)==2 and level[1] in level:
-             response ="write your email as ..........@gmail.com" 
+            response ="write your email as ..........@gmail.com" 
         elif text == "1*2":
             response ="CON login \n"  
         elif text == "1*3":
-                response ="CON Enter your pincode"   
+            response ="CON Enter your pincode"   
         elif text =="2" :
             response ="CON you selected Girls in code program \n" 
             response +="1. Join the program \n"
