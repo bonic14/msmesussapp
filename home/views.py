@@ -43,10 +43,7 @@ def ussdapp(request):
             response ="CON Enter your pincode"
             #====================culture in english end==================
         elif text =='2':
-            response ="CON Urukaza neza kurubuga rw'umuco nyarwanda "+str(level[0])+"\n"
-            
-        elif text == '2*1':
-            response ="CON urakoze kwiyandikisha kurubuga rw'umuco nyarwanda "+str(len(level))+"\n"
+            response ="CON Urukaza neza kurubuga rw'umuco nyarwanda "+str(len(level))+"\n"
             response +="1. Ushaka kwiga umuco nyarwanda \n"
             response +="2. Amatorero(atoza umuco nyarwanda) \n"
             response +="0. Gusubira inyuma " 
