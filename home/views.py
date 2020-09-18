@@ -62,10 +62,14 @@ def ussdapp(request):
             response +="4. amsaha ane: \n"
             response +="5. amasaha atantu: \n"
             response +="0. Gusubira inyuma: \n"
-        elif numb =='2*1*1*1' :   
+        elif text =='2*1*1*1' :   
             response ="CON umwirondoro wawe "+str(len(level))+"\n"
             response +=" syiramo amazina yawe \n"
-
+        elif text =='2*1*1*1' :   
+            response ="CON adirese yawe(aho utuye) "+str(len(level))+"\n"
+        elif text =='2*1*1*1' :   
+            response ="CON shyiramo nimero ya telephone  "+str(len(level))+"\n"
+                
     
 
         else:
