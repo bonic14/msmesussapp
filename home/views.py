@@ -48,13 +48,13 @@ def ussdapp(request):
             response +="2. Amatorero(atoza umuco nyarwanda) \n"
             response +="0. Gusubira inyuma " 
         elif text =='2*1':
-            response ="CON igihe cyigana gute?? \n"  
+            response ="CON igihe cyigana gute?? \n"+str(len(level))+"\n" 
             response +="1. umunsi \n"
             response +="2. icyumweru \n"  
             response +="3. ukwezi \n"
             response +="0. Gusubira inyuma "
-        elif numb =='2*1*1' and  int(len(level))==4 and str(level[3]) in str(level):
-            response ="CON ibiciro "
+        elif text =='2*1*1':
+            response ="CON ibiciro "+str(len(level))+"\n"
             response +="1. isaha imwe: \n"
             response +="2. amasaha abiri: \n"
             response +="3. amasaha atatu: \n"
