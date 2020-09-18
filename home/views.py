@@ -64,11 +64,12 @@ def ussdapp(request):
             response +="0. Gusubira inyuma: \n"
         elif text =='2*1*1*1' :   
             response ="CON umwirondoro wawe "+str(len(level))+"\n"
-            response +=" syiramo amazina yawe \n"
-        elif text =='2*1*1*1*1' :   
-            response =" adirese yawe(aho utuye) "+str(len(level))+"\n"
-        elif text =='2*1*1*1*1' :   
-            response =" shyiramo nimero ya telephone  "+str(len(level))+"\n"
+            response +=" shyiramo amazina yawe \n"
+        elif text == "":
+            response ="CON shyiramo ahutuye "+str(len(level))+"\n"
+            response +=" aderesi"
+        elif text == "":
+            response ="CON shyiramo nimero ya telefone "+str(len(level))+""   
                 
     
 
