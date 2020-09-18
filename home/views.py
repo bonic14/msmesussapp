@@ -54,6 +54,7 @@ def ussdapp(request):
             response +="2. icyumweru \n"  
             response +="3. ukwezi \n"
             response +="0. Gusubira inyuma "
+            #=========================umunsi==========
         elif text =='2*1*1':
             response ="CON ibiciro "+str(len(level))+"\n"
             response +="1. isaha imwe: \n"
@@ -65,12 +66,27 @@ def ussdapp(request):
         elif text =='2*1*1*1' :   
             response ="CON umwirondoro wawe "+str(len(level))+"\n"
             response +=" shyiramo amazina yawe \n"
-        elif text == "":
+        elif text == '2*1*1*1*1':
             response ="CON shyiramo ahutuye "+str(len(level))+"\n"
             response +=" aderesi"
-        elif text == "":
+        elif text == '2*1*1*1*1*1':
             response ="CON shyiramo nimero ya telefone "+str(len(level))+""   
-                
+
+
+
+            #==========umunsi ntago urangiye haraburamo ibindi
+          #hano icyumweru nihano gutangiriye  
+        elif text =='2*1*2':
+            response ="CON ibiciro "+str(len(level))+"\n"
+            response +="1. iminsi ibiri: \n"
+            response +="2. iminsi itatu: \n"
+            response +="3. iminsi ine: \n"
+            response +="4. iminsi itantu: \n"
+            response +="5. icyumweru cyose: \n"
+            response +="0. Gusubira inyuma: \n"
+        elif text =='2*1*2*1' :   
+            response ="CON umwirondoro wawe "+str(len(level))+"\n"
+            response +=" shyiramo amazina yawe \n"    
     
 
         else:
