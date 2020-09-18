@@ -50,19 +50,27 @@ def ussdapp(request):
         elif text == '2*1':
             response ="CON  shyiramo nimero ya telefoni "+str(len(level))+"\n"
         elif numb =='2*1' and int(len(level))==3 and str(level[2]) in str(level):
-            response ="CON urakoze kwiyandikisha kurubuga rw'umuco nyarwanda"  
-            response +="1. Ushaka kwiga umuco nyarwanda"
-            response +="2. Amakuru /Amatangazo"
-            response +="3. Amatorero(atoza umuco nyarwanda)"
-            response +="0. Gusubira inyuma" 
+            response ="CON urakoze kwiyandikisha kurubuga rw'umuco nyarwanda \n"  
+            response +="1. Ushaka kwiga umuco nyarwanda \n"
+            response +="2. Amatorero(atoza umuco nyarwanda) \n"
+            response +="0. Gusubira inyuma " 
             
-        elif numb =='2*1' and  int(len(level))==4 and str(level[3]) in str(level):
-            response ="CON urakoze kwiyandikisha kurubuga rw'umuco nyarwanda"  
-            response +="1. Gukomeza"
-            response +="2. Gusubira inyuma"  
-       
+        elif numb =='2*1*1' and  int(len(level))==4 and str(level[3]) in str(level):
+            response ="CON igihe cyigana gute?? \n"  
+            response +="1. umunsi \n"
+            response +="2. icyumweru \n"  
+            response +="3. ukwezi \n"
+            response +="0. Gusubira inyuma "
 
-           
+        elif numb =='2*1*1*1' and  int(len(level))==5 and str(level[4]) in str(level):   
+            response ="CON ibiciro "
+            response +="1. isaha imwe: \n"
+            response +="2. amasaha abiri: \n"
+            response +="3. amasaha atatu: \n"
+            response +="4. amsaha ane: \n"
+            response +="5. amasaha atantu: \n"
+            response +="0. Gusubira inyuma: \n"
+
     
 
         else:
