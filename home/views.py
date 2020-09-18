@@ -46,6 +46,7 @@ def ussdapp(request):
             response ="CON Urukaza neza kurubuga rw'umuco nyarwanda "+str(len(level))+"\n"
             response +="1. Ushaka kwiga umuco nyarwanda \n"
             response +="2. Amatorero(atoza umuco nyarwanda) \n"
+            response +="3. Baza ikibazo \n"
             response +="0. Gusubira inyuma " 
         elif text =='2*1':
             response ="CON igihe cyigana gute?? \n"+str(len(level))+"\n" 
@@ -61,8 +62,9 @@ def ussdapp(request):
             response +="4. amsaha ane: \n"
             response +="5. amasaha atantu: \n"
             response +="0. Gusubira inyuma: \n"
-        elif numb =='2*1*1*1' and  int(len(level))==5 and str(level[4]) in str(level):   
-            response =""
+        elif numb =='2*1*1*1' :   
+            response ="CON umwirondoro wawe "+str(len(level))+"\n"
+            response +=" syiramo amazina yawe \n"
 
     
 
