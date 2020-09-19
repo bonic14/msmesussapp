@@ -92,7 +92,7 @@ def ussdapp(request):
 
           #icyumweru cyigombo kurangirira hano  
         #========ukwezi kuratangiye======
-        elif text='2*1*3':
+        elif text =='2*1*3':
             response ="CON ibiciro "+str(len(level))+"\n"
             response +="1. kabiri mukwezi: \n"
             response +="2. gatatu mukwezi: \n"
