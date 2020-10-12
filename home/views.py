@@ -98,7 +98,7 @@ def ussdapp(request):
             response +="2. gatatu mukwezi: \n"
             response +="3. ukwezi kose: \n"
             response +="0. Gusubira inyuma: \n"
-        elif text =='2*1*2*1' :   
+        elif text =='2*1*3*1' :   
             response ="CON umwirondoro wawe "+str(len(level))+"\n"
             response +=" shyiramo amazina yawe \n"  
             
@@ -112,3 +112,5 @@ def ussdapp(request):
     
 
     return HttpResponse('welcome')
+
+def registration     
