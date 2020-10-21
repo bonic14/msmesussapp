@@ -1,7 +1,11 @@
 from django.shortcuts import render
 import africastalking
-from django.http import HttpResponse
+from .models import *
+from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from rest_framework.parsers import JSONParser
+from .serializers import*
+from django.http import HttpResponse
 username = "nsabihamiss@gmail.com"
 api_key = "7a6e5b772d94fc4af67cb8e9ac0b656af8ab659b27e422c2a1105d374bcb4662"
 africastalking.initialize(username,api_key)
@@ -113,4 +117,79 @@ def ussdapp(request):
 
     return HttpResponse('welcome')
 
-def registration     
+
+def registration(request):
+    
+    #select =Registration.objects.all().filter(phone='0788978517').order_by('id')
+    select =Registration.objects.all().order_by('id')
+    if request.method =='POST':
+        phone=request.POST['phone']
+        firstname =request.POST['FirstName']
+        lastname =request.POST['LastName']
+        insert = Registration(phone=phone,firstname=firstname,lastname=lastname)
+        try:
+            insert.save()
+            return render(request,'register.html',{'message': 'data has been inserted successful','data':select})
+        except:
+            return render(request,'register.html',{'message': 'fail to insert','data':select})
+    return render(request,'register.html',{'data':select})
+
+def delreg(request,id):
+    select =Registration.objects.all().order_by('-id')
+    deleteInfos=Registration.objects.get(id=id).delete()
+    return render(request,'register.html',{'delmsg':'data has been deleted','data':select})
+
+def updatereg(request,id):
+    select =Registration.objects.all().order_by('-id')
+    update =Registration.objects.get(id=id)
+    if request.method=='POST':
+        update.phone = request.POST['phone']
+        update.firstname = request.POST['firstname']
+        update.lastname = request.POST['lastname']
+        try:
+            update.save()
+            return render(request,'updateregister.html',{'message':'data has been updated','data':select,'update':update})    
+        except:
+            return render(request,'updateregister.html',{'message':'data hasn failed','data':select,'update':update})
+
+    return render(request,'updateregister.html',{'delmsg':'successful deleted','data':select,'update':update})
+
+#===============buiding your endpoint
+@csrf_exempt
+def registerEndpoint(request):
+    """
+    List all code snippets, or create a new snippet.
+    """
+    if request.method == 'GET':
+        reg =Registration.objects.all()
+        serializer = RegisterSerializers(reg, many=True)
+        return JsonResponse(serializer.data, safe=False)
+
+    elif request.method == 'POST':
+        data = JSONParser().parse(request) #request .data
+        serializer = RegisterSerializers(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse({'message':'successful','data':serializer.data}, status=201)
+        return JsonResponse(serializer.errors, status=400)
+
+# delete/put/get single data
+@csrf_exempt
+def deleteEndpoint(request,id):
+     
+    if request.method == 'GET':
+        reg =Registration.objects.get(id=id)
+        serializer = RegisterSerializers(reg, many=False)
+        return JsonResponse(serializer.data, safe=False)
+    elif request.method =='DELETE':
+        delete=Registration.objects.get(id=id).delete()
+        return JsonResponse({'message':'data has been deleted'},status=490)
+
+    elif request.method == 'PUT':
+        reg =Registration.objects.get(id=id)
+        data = JSONParser().parse(request) #request .data
+        serializer = RegisterSerializers(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse({'message':'successful','data':serializer.data}, status=201)
+        return JsonResponse(serializer.errors, status=400)        

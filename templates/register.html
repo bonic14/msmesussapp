@@ -1,0 +1,45 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Application</h1>
+    <p class="lead">fullill form below to Apply in program</p>
+</div>
+
+<div class="container">
+   <div class="form-group p">
+       <p class="alert alert-warning">{{message}}</p>
+       <form method="POST" action="{% url 'register' %}" accept="">
+           {% csrf_token %}
+           <input type="text" placeholder="Enter FirstName" name="FirstName" class="form-control"><br>
+           <input type="text" placeholder="Enter LastName" name="LastName" class="form-control"><br>
+           <input type="text" placeholder="Enter PhoneNumber" name="phone" class="form-control"><br>
+           <input type="submit" value="send" class="form-control bg-info">
+       </form>  
+       
+
+   </div>
+</div> 
+<div class="table">
+    <table>
+        
+        <tr><td>id</td><td>First Name</td><td>Last Name</td><td>Phone Number</td>
+            <td>delete</td><td>update</td>
+        </tr>
+        {% for ida in data %} <tr> 
+            <td>{{ ida.id }} </td>
+            <td>{{ ida.firstname }} </td>
+            <td>{{ ida.lastname }}</td>
+            <td>{{ ida.phone }}</td>
+            <td><a href="{%url 'deleteInfos' id=ida.id %}"><span class="btn btn-danger">delete</span></a></td>
+            <td><a href="{% url 'updateInfos' id=ida.id %}"><span class="btn btn-success">update</span></a></td>
+            
+        </tr>
+        
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
