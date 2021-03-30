@@ -37,7 +37,7 @@ def ussdapp(request):
             response +="3. MSMEs\n"
             response +="4. Freelancers\n"
             response +="0. Go Black"
-           #===========culture in english
+           #===========become iworkers registration
         elif text == '1*1':
             response ="CON Iworker Digital Platforms "+str(len(level))+"\n"
             response +="1. CAN\n"
@@ -47,13 +47,13 @@ def ussdapp(request):
             response +="0. Go Black"
 
         elif numb =='1*1' and int(len(level))==3 and str(level[2]) in str(level):
-            response ="CON Enter your password "
+            response ="CON Enter your Name "
         elif numb =='1*1' and  int(len(level))==4 and str(level[3]) in str(level):
-            response ="CON Enter your pincode"
+            response ="CON Enter your Age"
         elif text == '1*2':
-            response ="CON Enter your pincode"
+            response ="CON Enter your Gender"
         elif text == '1*3':
-            response ="CON Enter your pincode"
+            response ="CON Enter your Phone Number"
             #====================culture in english end==================
         elif text =='2':
             response ="CON Urukaza neza kurubuga rw'IHUZO Rwanda Iyandikishe"+str(len(level))+"\n"
@@ -79,11 +79,11 @@ def ussdapp(request):
             response +="5. amasaha atantu: \n"
             response +="0. Gusubira inyuma: \n"
         elif text =='2*1*1*1' :   
-            response ="CON umwirondoro wawe "+str(len(level))+"\n"
-            response +="1. shyiramo amazina yawe \n"
+            response ="CON umwirondoro wawe (amazina)"+str(len(level))+"\n"
+            response +="0. Gusubira inyuma \n"
         elif text == '2*1*1*1*1':
             response ="CON shyiramo ahutuye "+str(len(level))+"\n"
-            response +="1. aderesi"
+            response +="0. Gusubira inyuma"
         elif text == '2*1*1*1*1*1':
             response ="CON shyiramo nimero ya telefone "+str(len(level))+""   
 
@@ -91,35 +91,35 @@ def ussdapp(request):
 
             #==========umunsi ntago urangiye haraburamo ibindi
           #hano icyumweru nihano gutangiriye  
-        elif text =='2*1*2':
-            response ="CON ibiciro "+str(len(level))+"\n"
-            response +="1. iminsi ibiri : \n"
-            response +="2. iminsi itatu: \n"
-            response +="3. iminsi ine: \n"
-            response +="4. iminsi itantu: \n"
-            response +="5. icyumweru cyose: \n"
-            response +="0. Gusubira inyuma: \n"
-        elif text =='2*1*2*1' :   
-            response ="CON umwirondoro wawe "+str(len(level))+"\n"
-            response +=" shyiramo amazina yawe \n"    
-        elif text =='':
-            response =""
+        # elif text =='2*1*2':
+        #     response ="CON ibiciro "+str(len(level))+"\n"
+        #     response +="1. iminsi ibiri : \n"
+        #     response +="2. iminsi itatu: \n"
+        #     response +="3. iminsi ine: \n"
+        #     response +="4. iminsi itantu: \n"
+        #     response +="5. icyumweru cyose: \n"
+        #     response +="0. Gusubira inyuma: \n"
+        # elif text =='2*1*2*1' :   
+        #     response ="CON umwirondoro wawe "+str(len(level))+"\n"
+        #     response +=" shyiramo amazina yawe \n"    
+        # elif text =='':
+        #     response =""
 
-          #icyumweru cyigombo kurangirira hano  
-        #========ukwezi kuratangiye======
-        elif text =='2*1*3':
-            response ="CON ibiciro "+str(len(level))+"\n"
-            response +="1. kabiri mukwezi: \n"
-            response +="2. gatatu mukwezi: \n"
-            response +="3. ukwezi kose: \n"
-            response +="0. Gusubira inyuma: \n"
-        elif text =='2*1*3*1' :   
-            response ="CON umwirondoro wawe "+str(len(level))+"\n"
-            response +=" shyiramo amazina yawe \n"  
+        #   #icyumweru cyigombo kurangirira hano  
+        # #========ukwezi kuratangiye======
+        # elif text =='2*1*3':
+        #     response ="CON ibiciro "+str(len(level))+"\n"
+        #     response +="1. kabiri mukwezi: \n"
+        #     response +="2. gatatu mukwezi: \n"
+        #     response +="3. ukwezi kose: \n"
+        #     response +="0. Gusubira inyuma: \n"
+        # elif text =='2*1*3*1' :   
+        #     response ="CON umwirondoro wawe "+str(len(level))+"\n"
+        #     response +=" shyiramo amazina yawe \n"  
             
 
         else:
-            response ="END invalid choice"    
+            response ="END Thank you For Registering  "    
 
 
         return HttpResponse(response)
