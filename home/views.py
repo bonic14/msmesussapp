@@ -27,16 +27,25 @@ def ussdapp(request):
         response =""
         numb = text[:3]
         if text =='':
-            response = "CON Welcome to Rwandan Culture USSD app \n "
+            response = "CON Welcome to IHUZO Rwanda  \n "
             response +="1. English \n"
             response +="2. Kinyarwanda"
         elif text =='1':
-            response ="CON Welcome to Rwandan Culture platform "+str(len(level))+"\n"
-            response +="1. Register to have account(sigin) \n"
+            response ="CON Register Here To The Digital Commerce Partners For Your Business "+str(len(level))+"\n"
+            response +="1. Become an Iworkers\n"
+            response +="2. DSP Registration\n"
+            response +="3. MSMEs\n"
+            response +="4. Freelancers\n"
             response +="0. Go Black"
            #===========culture in english
         elif text == '1*1':
-            response ="CON Enter your email or phone number "+str(len(level))+"\n"
+            response ="CON Iworker Digital Platforms "+str(len(level))+"\n"
+            response +="1. CAN\n"
+            response +="2. RTN\n"
+            response +="3. ABADASOBWA\n"
+            response +="4. Digital Ambsasador\n"
+            response +="0. Go Black"
+
         elif numb =='1*1' and int(len(level))==3 and str(level[2]) in str(level):
             response ="CON Enter your password "
         elif numb =='1*1' and  int(len(level))==4 and str(level[3]) in str(level):
@@ -47,16 +56,18 @@ def ussdapp(request):
             response ="CON Enter your pincode"
             #====================culture in english end==================
         elif text =='2':
-            response ="CON Urukaza neza kurubuga rw'umuco nyarwanda "+str(len(level))+"\n"
-            response +="1. Ushaka kwiga umuco nyarwanda \n"
-            response +="2. Amatorero(atoza umuco nyarwanda) \n"
-            response +="3. Baza ikibazo \n"
+            response ="CON Urukaza neza kurubuga rw'IHUZO Rwanda Iyandikishe"+str(len(level))+"\n"
+            response +="1. Become an Iworkers\n"
+            response +="2. DSP Registration\n"
+            response +="3. MSMEs\n"
+            response +="4. Freelancers\n"
             response +="0. Gusubira inyuma " 
         elif text =='2*1':
-            response ="CON igihe cyigana gute?? \n"+str(len(level))+"\n" 
-            response +="1. umunsi \n"
-            response +="2. icyumweru \n"  
-            response +="3. ukwezi \n"
+            response ="CON Iworker Digital Platforms "+str(len(level))+"\n"
+            response +="1. CAN\n"
+            response +="2. RTN\n"
+            response +="3. ABADASOBWA\n"
+            response +="4. Digital Ambsasador\n"
             response +="0. Gusubira inyuma "
             #=========================umunsi==========
         elif text =='2*1*1':
