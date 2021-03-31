@@ -45,15 +45,27 @@ def ussdapp(request):
             response +="3. ABADASOBWA\n"
             response +="4. Digital Ambsasador\n"
             response +="0. Go Black"
+             #=========================CAN==========
 
-        elif text == '1*1':
+        elif text == '1*1*1':
             response ="CON Enter your name "+str(len(level))+"\n"
-        elif numb =='1*1' and int(len(level))==3 and str(level[2]) in str(level):
+        elif numb =='1*1*1' and int(len(level))==3 and str(level[2]) in str(level):
             response ="CON Enter your Age "
-        elif numb =='1*1' and  int(len(level))==4 and str(level[3]) in str(level):
+        elif numb =='1*1*1' and  int(len(level))==4 and str(level[3]) in str(level):
             response ="CON Enter your phone number"
-        elif numb =='1*1' and  int(len(level))==5 and str(level[4]) in str(level):
+        elif numb =='1*1*1' and  int(len(level))==5 and str(level[4]) in str(level):
             response ="CON Enter your District"
+
+          #=========================RTN==========
+        elif text == '1*1*2':
+            response ="CON Enter your name "+str(len(level))+"\n"
+        elif numb =='1*1*2' and int(len(level))==3 and str(level[2]) in str(level):
+            response ="CON Enter your Age "
+        elif numb =='1*1*2' and  int(len(level))==4 and str(level[3]) in str(level):
+            response ="CON Enter your phone number"
+        elif numb =='1*1*2' and  int(len(level))==5 and str(level[4]) in str(level):
+            response ="CON Enter your District"   
+
 
         elif text == '1*2':
             response ="CON Enter your name "+str(len(level))+"\n"
@@ -109,7 +121,7 @@ def ussdapp(request):
             response +="4. Digital Ambsasador\n"
             response +="5. Others \n"
             response +="0. Gusubira inyuma "
-            #=========================CAN==========
+           
         elif text =='2*1*1':
             response ="CON ibiciro "+str(len(level))+"\n"
             response +="1. isaha imwe: \n"
