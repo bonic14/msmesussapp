@@ -50,27 +50,27 @@ def ussdapp(request):
             response ="CON Enter your Name "
         elif numb =='1*1' and  int(len(level))==4 and str(level[3]) in str(level):
             response ="CON Enter your Age"
-        elif text == '1*2' and  int(len(level))==5 and str(level[4]) in str(level)::
+        elif text == '1*2' and  int(len(level))==5 and str(level[4]) in str(level):
             response ="CON Enter your Gender"
-        elif text == '1*3' and  int(len(level))==6 and str(level[5]) in str(level)::
+        elif text == '1*3' and  int(len(level))==6 and str(level[5]) in str(level):
             response ="CON Enter your Phone Number"
 
-        #===========become iworkers registration
+        #===========RTN registration
         elif text == '1*1*2':
 
             elif numb =='1*1' and int(len(level))==3 and str(level[2]) in str(level):
             response ="CON Enter your Name "
             elif numb =='1*1' and  int(len(level))==4 and str(level[3]) in str(level):
             response ="CON Enter your Age"
-            elif text == '1*2' and  int(len(level))==5 and str(level[4]) in str(level)::
+            elif text == '1*2' and  int(len(level))==5 and str(level[4]) in str(level):
             response ="CON Enter your Gender"
-            elif text == '1*3' and  int(len(level))==6 and str(level[5]) in str(level)::
+            elif text == '1*3' and  int(len(level))==6 and str(level[5]) in str(level):
             response ="CON Enter your Phone Number"
 
 
 
 
-            
+
 
             #====================culture in english end==================
         elif text =='2':
