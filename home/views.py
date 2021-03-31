@@ -22,18 +22,19 @@ def ussdapp(request):
         session_id = request.POST.get("sessionId")
         service_code = request.POST.get("serviceCode")
         phone_number =request.POST.get("phoneNumber")
-        newtext = request.POST.get("text")
+        text = request.POST.get("text")
+        # newtext = request.POST.get("text")
         
-        select=SessionsModel.objects.filter(sessionID=session_id)
+        # select=SessionsModel.objects.filter(sessionID=session_id)
         
-        if select.exists():
+        # if select.exists():
             
-            update = SessionsModel.objects.filter(sessionID=session_id).update(newsession=newtext)
-        else:
-            insert = SessionsModel(sessionID=session_id,newsession=newtext)
-            insert.save()
-        for nicole in select:              
-            text=nicole.newsession
+        #     update = SessionsModel.objects.filter(sessionID=session_id).update(newsession=newtext)
+        # else:
+        #     insert = SessionsModel(sessionID=session_id,newsession=newtext)
+        #     insert.save()
+        # for nicole in select:              
+        #     text=nicole.newsession
 
 
         level = text.split('*')
