@@ -45,7 +45,7 @@ def ussdapp(request):
             response +="1. English \n"
             response +="2. Kinyarwanda"
         elif text =='1':
-            update = SessionsModel.objects.filter(sessionID=session_id).update(newsession='')
+            # update = SessionsModel.objects.filter(sessionID=session_id).update(newsession='')
             response ="CON Register Here To The Digital Commerce Partners For Your Business \n"
             response +="1. Become an Iworkers\n"
             response +="2. DSP Registration\n"
