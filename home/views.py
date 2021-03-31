@@ -50,10 +50,28 @@ def ussdapp(request):
             response ="CON Enter your Name "
         elif numb =='1*1' and  int(len(level))==4 and str(level[3]) in str(level):
             response ="CON Enter your Age"
-        elif text == '1*2':
+        elif text == '1*2' and  int(len(level))==5 and str(level[4]) in str(level)::
             response ="CON Enter your Gender"
-        elif text == '1*3':
+        elif text == '1*3' and  int(len(level))==6 and str(level[5]) in str(level)::
             response ="CON Enter your Phone Number"
+
+        #===========become iworkers registration
+        elif text == '1*1*2':
+
+            elif numb =='1*1' and int(len(level))==3 and str(level[2]) in str(level):
+            response ="CON Enter your Name "
+            elif numb =='1*1' and  int(len(level))==4 and str(level[3]) in str(level):
+            response ="CON Enter your Age"
+            elif text == '1*2' and  int(len(level))==5 and str(level[4]) in str(level)::
+            response ="CON Enter your Gender"
+            elif text == '1*3' and  int(len(level))==6 and str(level[5]) in str(level)::
+            response ="CON Enter your Phone Number"
+
+
+
+
+            
+
             #====================culture in english end==================
         elif text =='2':
             response ="CON Urukaza neza kurubuga rw'IHUZO Rwanda Iyandikishe"+str(len(level))+"\n"
@@ -68,8 +86,9 @@ def ussdapp(request):
             response +="2. RTN\n"
             response +="3. ABADASOBWA\n"
             response +="4. Digital Ambsasador\n"
+            response +="5. Others \n"
             response +="0. Gusubira inyuma "
-            #=========================umunsi==========
+            #=========================CAN==========
         elif text =='2*1*1':
             response ="CON ibiciro "+str(len(level))+"\n"
             response +="1. isaha imwe: \n"
