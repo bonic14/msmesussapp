@@ -46,33 +46,54 @@ def ussdapp(request):
             response +="4. Digital Ambsasador\n"
             response +="0. Go Black"
 
+        elif text == '1*1':
+            response ="CON Enter your name "+str(len(level))+"\n"
         elif numb =='1*1' and int(len(level))==3 and str(level[2]) in str(level):
-            response ="CON Enter your Name "
+            response ="CON Enter your Age "
         elif numb =='1*1' and  int(len(level))==4 and str(level[3]) in str(level):
-            response ="CON Enter your Age"
-        elif text == '1*2' and  int(len(level))==5 and str(level[4]) in str(level):
-            response ="CON Enter your Gender"
-        elif text == '1*3' and  int(len(level))==6 and str(level[5]) in str(level):
-            response ="CON Enter your Phone Number"
+            response ="CON Enter your phone number"
+        elif numb =='1*1' and  int(len(level))==5 and str(level[4]) in str(level):
+            response ="CON Enter your District"
 
-        #===========RTN registration
-        # elif text == '1*1*2':
+        elif text == '1*2':
+            response ="CON Enter your name "+str(len(level))+"\n"
+        elif numb =='1*2' and int(len(level))==3 and str(level[2]) in str(level):
+            response ="CON Enter your Age "
+        elif numb =='1*2' and  int(len(level))==4 and str(level[3]) in str(level):
+            response ="CON Enter your phone number"
+        elif numb =='1*2' and  int(len(level))==5 and str(level[4]) in str(level):
+            response ="CON Enter your District"    
+        
 
-        #     elif numb =='1*1*2' and int(len(level))==3 and str(level[2]) in str(level):
-        #     response ="CON Enter your Name "
-        #     elif numb =='1*1' and  int(len(level))==4 and str(level[3]) in str(level):
-        #     response ="CON Enter your Age"
-        #     elif text == '1*2' and  int(len(level))==5 and str(level[4]) in str(level):
-        #     response ="CON Enter your Gender"
-        #     elif text == '1*3' and  int(len(level))==6 and str(level[5]) in str(level):
-        #     response ="CON Enter your Phone Number"
+       
 
 
 
 
 
 
-            #====================culture in english end==================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            #====================Registration in english end==================
+
+             #====================iyandikishe mukinyarwanda biratangiye==================
         elif text =='2':
             response ="CON Urukaza neza kurubuga rw'IHUZO Rwanda Iyandikishe"+str(len(level))+"\n"
             response +="1. Become an Iworkers\n"
