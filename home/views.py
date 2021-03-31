@@ -44,7 +44,7 @@ def ussdapp(request):
             response = "CON Welcome to IHUZO Rwanda  \n "
             response +="1. English \n"
             response +="2. Kinyarwanda"
-        elif text =='1':
+        elif text == '1':
             # update = SessionsModel.objects.filter(sessionID=session_id).update(newsession='')
             response ="CON Register Here To The Digital Commerce Partners For Your Business \n"
             response +="1. Become an Iworkers\n"
@@ -54,7 +54,7 @@ def ussdapp(request):
             response +="0. Go Black"
            #===========become iworkers registration
         elif text == '1*1':
-            response ="Register  to Become an iWorker  on Digital Platforms \n"
+            response ="Register  to Become an iWorker  on Digital Platforms "+str(len(level))+"\n"
             response +="1. CAN\n"
             response +="2. RTN\n"
             response +="3. ABADASOBWA\n"
