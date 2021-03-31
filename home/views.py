@@ -22,7 +22,20 @@ def ussdapp(request):
         session_id = request.POST.get("sessionId")
         service_code = request.POST.get("serviceCode")
         phone_number =request.POST.get("phoneNumber")
-        text = request.POST.get("text")
+        newtext = request.POST.get("text")
+        
+        select=SessionsModel.objects.filter(sessionID=session_id)
+        
+        if select.exists():
+            
+            update = SessionsModel.objects.filter(sessionID=session_id).update(newsession=newtext)
+        else:
+            insert = SessionsModel(sessionID=session_id,newsession=newtext)
+            insert.save()
+        for nicole in select:              
+            text=nicole.newsession
+
+
         level = text.split('*')
         response =""
         numb = text[:3]
@@ -30,8 +43,9 @@ def ussdapp(request):
             response = "CON Welcome to IHUZO Rwanda  \n "
             response +="1. English \n"
             response +="2. Kinyarwanda"
-        elif text =='1':
-            response ="CON Register Here To The Digital Commerce Partners For Your Business "+str(len(level))+"\n"
+        elif text =='1*0':
+            update = SessionsModel.objects.filter(sessionID=session_id).update(newsession='')
+            response ="CON Register Here To The Digital Commerce Partners For Your Business \n"
             response +="1. Become an Iworkers\n"
             response +="2. DSP Registration\n"
             response +="3. MSMEs\n"
@@ -39,7 +53,7 @@ def ussdapp(request):
             response +="0. Go Black"
            #===========become iworkers registration
         elif text == '1*1':
-            response ="CON Iworker Digital Platforms "+str(len(level))+"\n"
+            response ="Register  to Become an iWorker  on Digital Platforms \n"
             response +="1. CAN\n"
             response +="2. RTN\n"
             response +="3. ABADASOBWA\n"
@@ -48,7 +62,7 @@ def ussdapp(request):
              #=========================CAN==========
 
         elif text == '1*1*1':
-            response ="CON Enter your name "+str(len(level))+"\n"
+            response ="CON Enter your name \n"
         elif numb =='1*1*2' and int(len(level))==3 and str(level[2]) in str(level):
             response ="CON Enter your Age "
         elif numb =='1*1*3' and  int(len(level))==4 and str(level[3]) in str(level):
@@ -58,7 +72,7 @@ def ussdapp(request):
 
           #=========================RTN==========
         elif text == '1*1*2':
-            response ="CON Enter your name "+str(len(level))+"\n"
+            response ="CON Enter your name \n"
         elif numb =='1*1*2' and int(len(level))==3 and str(level[2]) in str(level):
             response ="CON Enter your Age "
         elif numb =='1*1*2' and  int(len(level))==4 and str(level[3]) in str(level):
@@ -77,7 +91,7 @@ def ussdapp(request):
 
 
          #=========================DIGITAL AMBASSADOR==========
-        elif text == '1*2':
+        elif text == '1*1*4':
             response ="CON Enter your name "+str(len(level))+"\n"
         elif numb =='1*2' and int(len(level))==3 and str(level[2]) in str(level):
             response ="CON Enter your Age "
@@ -91,18 +105,29 @@ def ussdapp(request):
         
          #===========DSP registration 
         elif text == '1*2':
-            response ="CON Enter your name "+str(len(level))+"\n"
-        elif numb =='1*2' and int(len(level))==3 and str(level[2]) in str(level):
-            response ="CON Enter your Age "
-        elif numb =='1*2' and  int(len(level))==4 and str(level[3]) in str(level):
-            response ="CON Enter your phone number"
-        elif numb =='1*2' and  int(len(level))==5 and str(level[4]) in str(level):
-            response ="CON Enter your District"    
+            response ="CON Iworker Digital Platforms "+str(len(level))+"\n"
+            response +="1. CAN\n"
+            response +="2. RTN\n"
+            response +="3. ABADASOBWA\n"
+            response +="4. Digital Ambsasador\n"
+            response +="0. Go Black"   
+
+
+
 
        
 
 
-
+        elif text == '1*3':
+            response ="CON Join Hundreds of  E-commerce & Digital Platforms  Register Your business Here "+str(len(level))+"\n"
+            response +="1. AgriTech\n"
+            response +="2. EdTech\n"
+            response +="3. HeathTech\n"
+            response +="4. IT & Hard Solutions\n"
+            response +="5. E-Commerce\n"
+            response +="6. Digital Infrastructure\n"
+            response +="7. Others\n"
+            response +="0. Go Black"   
 
 
 
