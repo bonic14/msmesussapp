@@ -48,17 +48,17 @@ def ussdapp(request):
             # update = SessionsModel.objects.filter(sessionID=session_id).update(newsession='')
             response ="CON Register Here To The Digital Commerce Partners For Your Business \n"
             response +="1. Become an Iworkers\n"
-            response +="2. DSP Registration\n"
+            response +="2. Service Provider\n"
             response +="3. MSMEs\n"
-            response +="4. Freelancers\n"
             response +="0. Go Black"
            #===========become iworkers registration
         elif text == '1*1':
-            response ="Register  to Become an iWorker  on Digital Platforms "+str(len(level))+"\n"
+            response =" CON Register  to Become an iWorker  on Digital Platforms "+str(len(level))+"\n"
             response +="1. CAN\n"
             response +="2. RTN\n"
             response +="3. ABADASOBWA\n"
             response +="4. Digital Ambsasador\n"
+            response +="5. Freelancers\n"
             response +="0. Go Black"
              #=========================CAN==========
 
@@ -118,7 +118,7 @@ def ussdapp(request):
 
        
 
-
+        #===========MSMEs registration
         elif text == '1*3':
             response ="CON Join Hundreds of  E-commerce & Digital Platforms  Register Your business Here "+str(len(level))+"\n"
             response +="1. AgriTech\n"
@@ -129,6 +129,27 @@ def ussdapp(request):
             response +="6. Digital Infrastructure\n"
             response +="7. Others\n"
             response +="0. Go Black"   
+
+        #===========agritech
+        elif text == '1*3*1':
+            response ="CON Enter your name \n"
+        elif numb =='1*3*2' and int(len(level))==3 and str(level[2]) in str(level):
+            response ="CON Enter your Age "
+        elif numb =='1*3*3' and  int(len(level))==4 and str(level[3]) in str(level):
+            response ="CON Enter your phone number"
+        elif numb =='1*3*4' and  int(len(level))==5 and str(level[4]) in str(level):
+            response ="CON Enter your District"    
+
+        #===========edtech
+        elif text == '1*3*2':
+            response ="CON Enter your name \n"
+        elif numb =='1*3*2' and int(len(level))==3 and str(level[2]) in str(level):
+            response ="CON Enter your Age "
+        elif numb =='1*3*3' and  int(len(level))==4 and str(level[3]) in str(level):
+            response ="CON Enter your phone number"
+        elif numb =='1*3*4' and  int(len(level))==5 and str(level[4]) in str(level):
+            response ="CON Enter your District"
+
 
 
 
