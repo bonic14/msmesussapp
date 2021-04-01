@@ -64,7 +64,7 @@ def ussdapp(request):
 
         elif text == '1*1*1':
             response ="CON Enter Your Fullname "+str(len(level))+"\n"
-        elif numb =='1*1*1' and int(len(level))==4 and str(level[3]) in str(level):
+        elif numb =='1*1*1' and int(len(level))==5 and str(level[4]) in str(level):
             response ="CON Enter Your Phone number "
         # elif numb =='1*1*1' and  int(len(level))==3 and str(level[2]) in str(level):
         #     response ="CON Enter your email"
