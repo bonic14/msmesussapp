@@ -69,7 +69,7 @@ def ussdapp(request):
         elif numb =='1*1*1' and  int(len(level))==4 and str(level[3]) in str(level):
             response ="CON Enter your email"
         elif numb =='1*1*1' and  int(len(level))==5 and str(level[4]) in str(level):
-            response ="CON Enter your District
+            response ="CON Enter your District"
 
           #=========================RTN==========
         elif text == '1*1*2':
