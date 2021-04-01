@@ -6,3 +6,4 @@ from .models import *
 # admin.site.register(Employees)
 admin.site.register(Registration)
 admin.site.register(SessionsModel)
+admin.site.register(Iworkers)

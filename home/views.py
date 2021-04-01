@@ -64,11 +64,11 @@ def ussdapp(request):
 
         elif text == '1*1*1':
             response ="CON Enter Your Fullname "+str(len(level))+"\n"
-        elif numb =='1*1*1' and int(len(level))==4 and str(level[3]) in str(level):
+        elif numb =='1*1*1' and int(len(level))==2 and str(level[1]) in str(level):
             response ="CON Enter Your Phone number "
-        elif numb =='1*1*1' and  int(len(level))==4 and str(level[3]) in str(level):
+        elif numb =='1*1*1' and  int(len(level))==3 and str(level[2]) in str(level):
             response ="CON Enter your email"
-        elif numb =='1*1*1' and  int(len(level))==5 and str(level[4]) in str(level):
+        elif numb =='1*1*1' and  int(len(level))==4 and str(level[1]) in str(level):
             response ="CON Enter your District"
 
           #=========================RTN==========
@@ -106,7 +106,7 @@ def ussdapp(request):
         
          #===========DSP registration 
         elif text == '1*2':
-            response ="CON Iworker Digital Platforms "+str(len(level))+"\n"
+            response ="CON Digital Service Provider "+str(len(level))+"\n"
             response +="1. CAN\n"
             response +="2. RTN\n"
             response +="3. ABADASOBWA\n"
