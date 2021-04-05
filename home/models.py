@@ -30,6 +30,16 @@ class Iworkers(models.Model):
     def __str__(self):
         return self.phoneNumber 
 
+class MSMEs(models.Model):
+    Fullname = models.CharField(max_length=255)   
+    phoneNumber = models.CharField(max_length=255)
+    email = models.CharField(max_length=255)
+    District = models.CharField(max_length=255)
+    def __str__(self):
+        return self.phoneNumber         
+
+        
+
 
 
     

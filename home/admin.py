@@ -7,3 +7,4 @@ from .models import *
 admin.site.register(Registration)
 admin.site.register(SessionsModel)
 admin.site.register(Iworkers)
+admin.site.register(MSMEs)
