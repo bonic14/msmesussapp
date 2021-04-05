@@ -63,6 +63,14 @@ def ussdapp(request):
             response +="5. Freelancers\n"
             response +="0. Go Black"
              #=========================CAN==========
+        elif nicole =='1*1*1' and int(len(level))== 5 and str(level[4]) in str(level):
+            response ="End Thank you for registering "
+        elif nicole =='1*1*1' and int(len(level))== 5 and str(level[4]) in str(level):
+            response ="End Thank you for registering "
+        elif nicole =='1*1*1' and int(len(level))== 5 and str(level[4]) in str(level):
+            response ="End Thank you for registering "
+        elif nicole =='1*1*1' and int(len(level))== 5 and str(level[4]) in str(level):
+            response ="End Thank you for registering "
 
         elif text == '1*1*1':
             response ="CON Enter Your Fullname "+str(len(level))+"\n"
@@ -74,16 +82,18 @@ def ussdapp(request):
         # elif nicole =='1*1*1' and  int(len(level))==3 and str(level[2]) in str(level):
         # elif nicole =='1*1*1' and  int(len(level))==4 and str(level[1]) in str(level):
         #     response ="CON Enter your District"
-
+      
           #=========================RTN==========
         elif text == '1*1*2':
-            response ="CON Enter your name \n"
-        elif numb =='1*1*2' and int(len(level))==3 and str(level[2]) in str(level):
-            response ="CON Enter your Age "
-        elif numb =='1*1*2' and  int(len(level))==4 and str(level[3]) in str(level):
-            response ="CON Enter your phone number"
-        elif numb =='1*1*2' and  int(len(level))==5 and str(level[4]) in str(level):
-            response ="CON Enter your District"   
+            response ="CON Enter Your Fullname "+str(len(level))+"\n"
+        elif nicole =='1*1*2' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter Your Phone number " 
+        elif nicole == '1*1*2'and int(len(level))== 5 and str(level[4]) in str(level):  
+            response = "CON Enter Your District" 
+
+        elif nicole =='1*1*1' and int(len(level))== 6 and str(level[5]) in str(level):
+            response ="End Thank you for registering "    
+
         #=========================ABADASOBWA==========
         elif text == '1*1*3':
             response ="CON Enter your name "+str(len(level))+"\n"
