@@ -41,7 +41,7 @@ def ussdapp(request):
         response =""
         numb = text[:3]
 
-        nicole = text[:5]
+        nicole = text[:8]
         if text =='':
             response = "CON Welcome to IHUZO Rwanda  \n "
             response +="1. English \n"
@@ -115,6 +115,16 @@ def ussdapp(request):
             response = "CON Enter Your District" 
         elif nicole =='1*1*4' and int(len(level))== 6 and str(level[5]) in str(level):
             response ="End Thank you for registering "    
+
+         #=========================freelancers==========
+        elif text == '1*1*5':
+            response ="CON Enter Your Fullname "+str(len(level))+"\n"
+        elif nicole =='1*1*5' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter Your Phone number " 
+        elif nicole == '1*1*5'and int(len(level))== 5 and str(level[4]) in str(level):  
+            response = "CON Enter Your District" 
+        elif nicole =='1*1*5' and int(len(level))== 6 and str(level[5]) in str(level):
+            response ="End Thank you for registering "        
 
 
 
