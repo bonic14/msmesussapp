@@ -41,7 +41,7 @@ def ussdapp(request):
         response =""
         numb = text[:3]
 
-        nicole = text[:8]
+        nicole = text[:6]
         if text =='':
             response = "CON Welcome to IHUZO Rwanda  \n "
             response +="1. English \n"
