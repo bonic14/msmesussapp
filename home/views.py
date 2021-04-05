@@ -61,6 +61,7 @@ def ussdapp(request):
             response +="3. ABADASOBWA\n"
             response +="4. Digital Ambsasador\n"
             response +="5. Freelancers\n"
+            response +="6. Other"
             response +="0. Go Black"
              #=========================CAN==========
         elif nicole =='1*1*1' and int(len(level))== 5 and str(level[4]) in str(level):
@@ -76,8 +77,9 @@ def ussdapp(request):
             response ="CON Enter Your Fullname "+str(len(level))+"\n"
         elif nicole =='1*1*1' and int(len(level))== 4 and str(level[3]) in str(level):
             response ="CON Enter Your Phone number "
-        
-        elif nicole =='1*1*1' and int(len(level))== 5 and str(level[4]) in str(level):
+        elif nicole == '1*1*1'and int(len(level))== 5 and str(level[4]) in str(level):  
+            response = "CON Enter Your District"     
+        elif nicole =='1*1*1' and int(len(level))== 6 and str(level[5]) in str(level):
             response ="End Thank you for registering "
         # elif nicole =='1*1*1' and  int(len(level))==3 and str(level[2]) in str(level):
         # elif nicole =='1*1*1' and  int(len(level))==4 and str(level[1]) in str(level):
@@ -90,30 +92,29 @@ def ussdapp(request):
             response ="CON Enter Your Phone number " 
         elif nicole == '1*1*2'and int(len(level))== 5 and str(level[4]) in str(level):  
             response = "CON Enter Your District" 
-
-        elif nicole =='1*1*1' and int(len(level))== 6 and str(level[5]) in str(level):
+        elif nicole =='1*1*2' and int(len(level))== 6 and str(level[5]) in str(level):
             response ="End Thank you for registering "    
 
         #=========================ABADASOBWA==========
         elif text == '1*1*3':
-            response ="CON Enter your name "+str(len(level))+"\n"
-        elif numb =='1*1*3' and int(len(level))==3 and str(level[2]) in str(level):
-            response ="CON Enter your Age "
-        elif numb =='1*1*3' and  int(len(level))==4 and str(level[3]) in str(level):
-            response ="CON Enter your phone number"
-        elif numb =='1*1*3' and  int(len(level))==5 and str(level[4]) in str(level):
-            response ="CON Enter your District"  
+            response ="CON Enter Your Fullname "+str(len(level))+"\n"
+        elif nicole =='1*1*3' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter Your Phone number " 
+        elif nicole == '1*1*3'and int(len(level))== 5 and str(level[4]) in str(level):  
+            response = "CON Enter Your District" 
+        elif nicole =='1*1*3' and int(len(level))== 6 and str(level[5]) in str(level):
+            response ="End Thank you for registering "    
 
 
          #=========================DIGITAL AMBASSADOR==========
         elif text == '1*1*4':
-            response ="CON Enter your name "+str(len(level))+"\n"
-        elif numb =='1*2' and int(len(level))==3 and str(level[2]) in str(level):
-            response ="CON Enter your Age "
-        elif numb =='1*2' and  int(len(level))==4 and str(level[3]) in str(level):
-            response ="CON Enter your phone number"
-        elif numb =='1*2' and  int(len(level))==5 and str(level[4]) in str(level):
-            response ="CON Enter your District"   
+            response ="CON Enter Your Fullname "+str(len(level))+"\n"
+        elif nicole =='1*1*4' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter Your Phone number " 
+        elif nicole == '1*1*4'and int(len(level))== 5 and str(level[4]) in str(level):  
+            response = "CON Enter Your District" 
+        elif nicole =='1*1*4' and int(len(level))== 6 and str(level[5]) in str(level):
+            response ="End Thank you for registering "    
 
 
 
