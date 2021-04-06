@@ -135,7 +135,39 @@ def ussdapp(request):
             response +="1. Egovernment Services\n"
             response +="2. Film&other multimedia\n"
             response +="3. Application Web Development\n"
+            response +="4. Others\n"
             response +="0. Go Black"   
+
+         #=========================EGORVERNMENT==========
+        elif text == '1*2*1':
+            response ="CON Enter Your Fullname "+str(len(level))+"\n"
+        elif nicole =='1*2*1' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter Your Phone number " 
+        elif nicole == '1*2*1'and int(len(level))== 5 and str(level[4]) in str(level):  
+            response = "CON Enter Your District" 
+        elif nicole =='1*2*1' and int(len(level))== 6 and str(level[5]) in str(level):
+            response ="End Thank you for registering "    
+
+        #=========================Film&other multimedia==========
+        elif text == '1*2*2':
+            response ="CON Enter Your Fullname "+str(len(level))+"\n"
+        elif nicole =='1*2*2' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter Your Phone number " 
+        elif nicole == '1*2*2'and int(len(level))== 5 and str(level[4]) in str(level):  
+            response = "CON Enter Your District" 
+        elif nicole =='1*2*2' and int(len(level))== 6 and str(level[5]) in str(level):
+            response ="End Thank you for registering "    
+
+
+         #=========================Application Web Development==========
+        elif text == '1*2*3':
+            response ="CON Enter Your Fullname "+str(len(level))+"\n"
+        elif nicole =='1*2*3' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter Your Phone number " 
+        elif nicole == '1*2*3'and int(len(level))== 5 and str(level[4]) in str(level):  
+            response = "CON Enter Your District" 
+        elif nicole =='1*2*3' and int(len(level))== 6 and str(level[5]) in str(level):
+            response ="End Thank you for registering "     
 
 
 
