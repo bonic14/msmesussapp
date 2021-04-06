@@ -132,10 +132,9 @@ def ussdapp(request):
          #===========DSP registration 
         elif text == '1*2':
             response ="CON Digital Service Provider "+str(len(level))+"\n"
-            response +="1. CAN\n"
-            response +="2. RTN\n"
-            response +="3. ABADASOBWA\n"
-            response +="4. Digital Ambsasador\n"
+            response +="1. Egovernment Services\n"
+            response +="2. Film&other multimedia\n"
+            response +="3. Application Web Development\n"
             response +="0. Go Black"   
 
 
