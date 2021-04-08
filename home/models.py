@@ -8,13 +8,7 @@ from django.db import models
 #     description = models.TextField()
 #     def __str__(self):
 #         return self.firstname
-class Registration(models.Model):
-    phone =models.CharField(max_length=255) 
-    firstname = models.CharField(max_length=255)
-    lastname = models.CharField(max_length=255) 
 
-    def __str__(self):
-        return self.firstname 
 
 class SessionsModel(models.Model):    
     sessionID = models.CharField(max_length=255)   
@@ -22,29 +16,17 @@ class SessionsModel(models.Model):
     def __str__(self):
         return self.sessionID
 
-class Iworkers(models.Model):
+class Ihuzo(models.Model):
+    category =models.CharField(max_length=255)
+    sector =models.CharField(max_length=255)
     Fullname = models.CharField(max_length=255)   
     phoneNumber = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
     District = models.CharField(max_length=255)
     def __str__(self):
         return self.phoneNumber 
-
-class Service_provide(models.Model):
-    Fullname = models.CharField(max_length=255)   
-    phoneNumber = models.CharField(max_length=255)
-    email = models.CharField(max_length=255)
-    District = models.CharField(max_length=255)
-    def __str__(self):
-        return self.phoneNumber         
-
-class MSMEs(models.Model):
-    Fullname = models.CharField(max_length=255)   
-    phoneNumber = models.CharField(max_length=255)
-    email = models.CharField(max_length=255)
-    District = models.CharField(max_length=255)
-    def __str__(self):
-        return self.phoneNumber         
+       
+        
 
         
 

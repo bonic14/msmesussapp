@@ -55,7 +55,7 @@ def ussdapp(request):
             response +="0. Go Black"
            #===========become iworkers registration
         elif text == '1*1':
-            response =" CON Register  to Become an iWorker  on Digital Platforms "+str(len(level))+"\n"
+            response =" CON Register  to Become an iWorker  on Digital Platforms \n"
             response +="1. CAN\n"
             response +="2. RTN\n"
             response +="3. ABADASOBWA\n"
@@ -64,22 +64,14 @@ def ussdapp(request):
             response +="6. Other\n"
             # response +="0. Go Black"
              #=========================CAN==========
-        elif nicole =='1*1*1' and int(len(level))== 5 and str(level[4]) in str(level):
-            response ="End Thank you for registering "
-        elif nicole =='1*1*1' and int(len(level))== 5 and str(level[4]) in str(level):
-            response ="End Thank you for registering "
-        elif nicole =='1*1*1' and int(len(level))== 5 and str(level[4]) in str(level):
-            response ="End Thank you for registering "
-        elif nicole =='1*1*1' and int(len(level))== 5 and str(level[4]) in str(level):
-            response ="End Thank you for registering "
-
+ 
         elif text == '1*1*1':
-            response ="CON Enter Your Fullname "+str(len(level))+"\n"
+            response ="CON Enter Your Fullname \n"
         elif nicole =='1*1*1' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Enter Your Phone number "
-        elif nicole == '1*1*1'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response = "CON Enter Your District"     
-        elif nicole =='1*1*1' and int(len(level))== 6 and str(level[5]) in str(level):
+            response ="CON Enter Your District "
+        elif nicole =='1*1*1' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Iworkers'
+            sector ='CAN'
             response = "END Thank you for registering "
         # elif nicole =='1*1*1' and  int(len(level))==3 and str(level[2]) in str(level):
         # elif nicole =='1*1*1' and  int(len(level))==4 and str(level[1]) in str(level):
@@ -87,43 +79,43 @@ def ussdapp(request):
       
           #=========================RTN==========
         elif text == '1*1*2':
-            response ="CON Enter Your Fullname "+str(len(level))+"\n"
+            response ="CON Enter Your Fullname \n"
         elif nicole =='1*1*2' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Enter Your Phone number " 
-        elif nicole == '1*1*2'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response = "CON Enter Your District" 
-        elif nicole =='1*1*2' and int(len(level))== 6 and str(level[5]) in str(level):
-            response ="End Thank you for registering "    
+            response ="CON Enter Your District " 
+        elif nicole =='1*1*2' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Iworkers'
+            sector ='RTN'
+            response ="END Thank you for registering "    
 
         #=========================ABADASOBWA==========
         elif text == '1*1*3':
-            response ="CON Enter Your Fullname "+str(len(level))+"\n"
+            response ="CON Enter Your Fullname \n"
         elif nicole =='1*1*3' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Enter Your Phone number " 
-        elif nicole == '1*1*3'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response = "CON Enter Your District" 
-        elif nicole =='1*1*3' and int(len(level))== 6 and str(level[5]) in str(level):
+            response ="CON Enter Enter Your District " 
+        elif nicole =='1*1*3' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Iworkers'
+            sector ='ABADASOBWA'
             response ="End Thank you for registering "    
 
 
          #=========================DIGITAL AMBASSADOR==========
         elif text == '1*1*4':
-            response ="CON Enter Your Fullname "+str(len(level))+"\n"
+            response ="CON Enter Your Fullname \n"
         elif nicole =='1*1*4' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Enter Your Phone number " 
-        elif nicole == '1*1*4'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response = "CON Enter Your District" 
-        elif nicole =='1*1*4' and int(len(level))== 6 and str(level[5]) in str(level):
+            response ="CON Enter Your District " 
+        elif nicole =='1*1*4' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Iworkers'
+            sector ='Digital Ambsasador'
             response ="End Thank you for registering "    
 
          #=========================freelancers==========
         elif text == '1*1*5':
-            response ="CON Enter Your Fullname "+str(len(level))+"\n"
+            response ="CON Enter Your Fullname \n"
         elif nicole =='1*1*5' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Enter Your Phone number " 
-        elif nicole == '1*1*5'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response = "CON Enter Your District" 
-        elif nicole =='1*1*5' and int(len(level))== 6 and str(level[5]) in str(level):
+            response ="CON Enter Your District " 
+        elif nicole =='1*1*5' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Iworker'
+            sector ='Freelancers'
             response ="End Thank you for registering "        
 
 
@@ -131,42 +123,42 @@ def ussdapp(request):
         
          #===========DSP registration 
         elif text == '1*2':
-            response ="CON Digital Service Provider "+str(len(level))+"\n"
+            response ="CON Digital Service Provider \n"
             response +="1. Egovernment Services\n"
             response +="2. Film&other multimedia\n"
             response +="3. Application Web Development\n"
             response +="4. Others\n"
-            response +="0. Go Black"   
+              
 
          #=========================EGORVERNMENT==========
         elif text == '1*2*1':
-            response ="CON Enter Your Fullname "+str(len(level))+"\n"
+            response ="CON Enter Your Fullname \n"
         elif nicole =='1*2*1' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Enter Your Phone number " 
-        elif nicole == '1*2*1'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response = "CON Enter Your District" 
-        elif nicole =='1*2*1' and int(len(level))== 6 and str(level[5]) in str(level):
+            response ="CON Enter Your District " 
+        elif nicole =='1*2*1' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Service Provider'
+            sector ='Egovernment Services'
             response ="End Thank you for registering "    
 
         #=========================Film&other multimedia==========
         elif text == '1*2*2':
-            response ="CON Enter Your Fullname "+str(len(level))+"\n"
+            response ="CON Enter Your Fullname \n"
         elif nicole =='1*2*2' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Enter Your Phone number " 
-        elif nicole == '1*2*2'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response = "CON Enter Your District" 
-        elif nicole =='1*2*2' and int(len(level))== 6 and str(level[5]) in str(level):
+            response ="CON Enter Your District " 
+        elif nicole =='1*2*2' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Service Provider'
+            sector ='Film&other multimedia'
             response ="End Thank you for registering "    
 
 
          #=========================Application Web Development==========
         elif text == '1*2*3':
-            response ="CON Enter Your Fullname "+str(len(level))+"\n"
+            response ="CON Enter Your Fullname \n"
         elif nicole =='1*2*3' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Enter Your Phone number " 
-        elif nicole == '1*2*3'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response = "CON Enter Your District" 
-        elif nicole =='1*2*3' and int(len(level))== 6 and str(level[5]) in str(level):
+            response ="CON Enter  Your District " 
+        elif nicole =='1*2*3' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Service Provider'
+            sector ='Application Web Development'
             response ="End Thank you for registering "     
 
 
@@ -176,85 +168,85 @@ def ussdapp(request):
 
         #===========MSMEs registration
         elif text == '1*3':
-            response ="CON Join Hundreds of  E-commerce & Digital Platforms  Register Your business Here "+str(len(level))+"\n"
+            response ="CON Join Hundreds of  E-commerce & Digital Platforms  Register Your business Here \n"
             response +="1. AgriTech\n"
             response +="2. EdTech\n"
             response +="3. HeathTech\n"
             response +="4. IT & Hard Solutions\n"
             response +="5. E-Commerce\n"
             response +="6. Digital Infrastructure\n"
-            response +="7. Fintech\n"
+            response +="7. FinTech\n"
             response +="8. Others\n"
-            response +="0. Go Black"   
+              
 
         #===========agritech
         elif text == '1*3*1':
-            response ="CON Enter Your Fullname "+str(len(level))+"\n"
+            response ="CON Enter Your Fullname \n"
         elif nicole =='1*3*1' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Enter Your Phone number "
-        elif nicole == '1*3*1'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response = "CON Enter Your District"     
-        elif nicole =='1*3*1' and int(len(level))== 6 and str(level[5]) in str(level):
+            response ="CON Enter Your District "     
+        elif nicole =='1*3*1' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'MSMEs'
+            sector ='AgriTech'
             response ="End Thank you for registering "   
 
         #===========edtech
         elif text == '1*3*2':
-            response ="CON Enter Your Fullname "+str(len(level))+"\n"
+            response ="CON Enter Your Fullname \n"
         elif nicole =='1*3*2' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Enter Your Phone number "
-        elif nicole == '1*3*2'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response = "CON Enter Your District"     
-        elif nicole =='1*3*2' and int(len(level))== 6 and str(level[5]) in str(level):
+            response ="CON Enter Your District "
+        elif nicole =='1*3*2' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'MSMEs'
+            sector ='EdTech'
             response ="End Thank you for registering "
 
         #===========HeathTech
         elif text == '1*3*3':
-            response ="CON Enter Your Fullname "+str(len(level))+"\n"
+            response ="CON Enter Your Fullname \n"
         elif nicole =='1*3*3' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Enter Your Phone number "
-        elif nicole == '1*3*3'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response = "CON Enter Your District"     
-        elif nicole =='1*3*3' and int(len(level))== 6 and str(level[5]) in str(level):
+            response ="CON Enter Your District "  
+        elif nicole =='1*3*3' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'MSMEs'
+            sector ='HeathTech'
             response ="End Thank you for registering "  
 
         #===========IT & Hard Solutions
         elif text == '1*3*4':
-            response ="CON Enter Your Fullname "+str(len(level))+"\n"
+            response ="CON Enter Your Fullname \n"
         elif nicole =='1*3*4' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Enter Your Phone number "
-        elif nicole == '1*3*4'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response = "CON Enter Your District"     
-        elif nicole =='1*3*4' and int(len(level))== 6 and str(level[5]) in str(level):
+            response ="CON Enter Your District "
+        elif nicole =='1*3*4' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'MSMEs'
+            sector ='IT & Hard Solutions'
             response ="End Thank you for registering "
 
         #===========E-Commerce
         elif text == '1*3*5':
-            response ="CON Enter Your Fullname "+str(len(level))+"\n"
+            response ="CON Enter Your Fullname \n"
         elif nicole =='1*3*5' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Enter Your Phone number "
-        elif nicole == '1*3*5'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response = "CON Enter Your District"     
-        elif nicole =='1*3*5' and int(len(level))== 6 and str(level[5]) in str(level):
+            response ="CON Enter Your District "
+        elif nicole =='1*3*5' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'MSMEs'
+            sector ='E-Commerce'
             response ="End Thank you for registering "     
 
-        #===========E-Digital Infrastructure
+        #===========Digital Infrastructure
         elif text == '1*3*6':
             response ="CON Enter Your Fullname "+str(len(level))+"\n"
         elif nicole =='1*3*6' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Enter Your Phone number "
-        elif nicole == '1*3*6'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response = "CON Enter Your District"     
-        elif nicole =='1*3*6' and int(len(level))== 6 and str(level[5]) in str(level):
+            response ="CON Enter Your District "   
+        elif nicole =='1*3*6' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'MSMEs'
+            sector = 'Digital Infrastructure'
             response ="End Thank you for registering "          
 
         #===========FINTECH
         elif text == '1*3*7':
             response ="CON Enter Your Fullname "+str(len(level))+"\n"
         elif nicole =='1*3*7' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Enter Your Phone number "
-        elif nicole == '1*3*7'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response = "CON Enter Your District"     
-        elif nicole =='1*3*7' and int(len(level))== 6 and str(level[5]) in str(level):
+            response ="CON Enter Your District "
+        elif nicole =='1*3*7' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'MSMEs'
+            sector = 'FinTech'
             response ="End Thank you for registering "  
 
 
