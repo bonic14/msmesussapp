@@ -72,6 +72,10 @@ def ussdapp(request):
         elif nicole =='1*1*1' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'Iworkers'
             sector ='CAN'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,fullname=fullname,district=district)
+            reg.insert()
             response = "END Thank you for registering "
         # elif nicole =='1*1*1' and  int(len(level))==3 and str(level[2]) in str(level):
         # elif nicole =='1*1*1' and  int(len(level))==4 and str(level[1]) in str(level):
@@ -95,7 +99,7 @@ def ussdapp(request):
         elif nicole =='1*1*3' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'Iworkers'
             sector ='ABADASOBWA'
-            response ="End Thank you for registering "    
+            response ="END Thank you for registering "    
 
 
          #=========================DIGITAL AMBASSADOR==========
@@ -106,7 +110,7 @@ def ussdapp(request):
         elif nicole =='1*1*4' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'Iworkers'
             sector ='Digital Ambsasador'
-            response ="End Thank you for registering "    
+            response ="END Thank you for registering "    
 
          #=========================freelancers==========
         elif text == '1*1*5':
@@ -116,7 +120,7 @@ def ussdapp(request):
         elif nicole =='1*1*5' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'Iworker'
             sector ='Freelancers'
-            response ="End Thank you for registering "        
+            response ="END Thank you for registering "        
 
 
 
@@ -138,7 +142,7 @@ def ussdapp(request):
         elif nicole =='1*2*1' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'Service Provider'
             sector ='Egovernment Services'
-            response ="End Thank you for registering "    
+            response ="END Thank you for registering "    
 
         #=========================Film&other multimedia==========
         elif text == '1*2*2':
@@ -148,7 +152,7 @@ def ussdapp(request):
         elif nicole =='1*2*2' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'Service Provider'
             sector ='Film&other multimedia'
-            response ="End Thank you for registering "    
+            response ="END Thank you for registering "    
 
 
          #=========================Application Web Development==========
@@ -159,7 +163,7 @@ def ussdapp(request):
         elif nicole =='1*2*3' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'Service Provider'
             sector ='Application Web Development'
-            response ="End Thank you for registering "     
+            response ="END Thank you for registering "     
 
 
 
@@ -187,7 +191,7 @@ def ussdapp(request):
         elif nicole =='1*3*1' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'MSMEs'
             sector ='AgriTech'
-            response ="End Thank you for registering "   
+            response ="END Thank you for registering "   
 
         #===========edtech
         elif text == '1*3*2':
@@ -197,7 +201,7 @@ def ussdapp(request):
         elif nicole =='1*3*2' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'MSMEs'
             sector ='EdTech'
-            response ="End Thank you for registering "
+            response ="END Thank you for registering "
 
         #===========HeathTech
         elif text == '1*3*3':
@@ -207,7 +211,7 @@ def ussdapp(request):
         elif nicole =='1*3*3' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'MSMEs'
             sector ='HeathTech'
-            response ="End Thank you for registering "  
+            response ="END Thank you for registering "  
 
         #===========IT & Hard Solutions
         elif text == '1*3*4':
@@ -217,7 +221,7 @@ def ussdapp(request):
         elif nicole =='1*3*4' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'MSMEs'
             sector ='IT & Hard Solutions'
-            response ="End Thank you for registering "
+            response ="END Thank you for registering "
 
         #===========E-Commerce
         elif text == '1*3*5':
@@ -227,7 +231,7 @@ def ussdapp(request):
         elif nicole =='1*3*5' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'MSMEs'
             sector ='E-Commerce'
-            response ="End Thank you for registering "     
+            response ="END Thank you for registering "     
 
         #===========Digital Infrastructure
         elif text == '1*3*6':
@@ -237,7 +241,7 @@ def ussdapp(request):
         elif nicole =='1*3*6' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'MSMEs'
             sector = 'Digital Infrastructure'
-            response ="End Thank you for registering "          
+            response ="END Thank you for registering "          
 
         #===========FINTECH
         elif text == '1*3*7':
@@ -247,7 +251,7 @@ def ussdapp(request):
         elif nicole =='1*3*7' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'MSMEs'
             sector = 'FinTech'
-            response ="End Thank you for registering "  
+            response ="END Thank you for registering "  
 
 
 
@@ -273,70 +277,60 @@ def ussdapp(request):
 
              #====================iyandikishe mukinyarwanda biratangiye==================
         elif text =='2':
-            response ="CON Kwiyandikisha mu guhuzwa n’umufasha mu bucuruzi"+str(len(level))+"\n"
+            response ="CON Kwiyandikisha mu guhuzwa n’umufasha mu bucuruzi\n"
             response +="1. Kuba umuhuza\n"
             response +="2. Utanga serivisi\n"
             response +="3. Ubucuruzi buto, ubuciriritse n’uburinganiye\n"
-            response +="0. Gusubira inyuma " 
+          
         elif text =='2*1':
-            response ="CON Kwiyandikisha nk’umuhuza "+str(len(level))+"\n"
+            response ="CON Kwiyandikisha nk’umuhuza \n"
             response +="1. CAN\n"
             response +="2. RTN\n"
             response +="3. ABADASOBWA\n"
             response +="4. Umuhuza mu ikoranabuhanga\n"
             response +="5. freelancers \n"
             response +="6. ibindi \n"
-            response +="0. Gusubira inyuma "
+            
 
          #=========================CAN==========
         elif text == '2*1*1':
-            response ="CON Shyiramo amazina yawe "+str(len(level))+"\n"
+            response ="CON Shyiramo amazina yawe \n"
         elif nicole =='2*1*1' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Shyiramo nimero ya telefone yawe "
+            response = "CON Shiramo Akarere utuyemo"
         elif nicole == '2*1*1'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response = "CON Shiramo Akarere utuyemo"     
-        elif nicole =='2*1*1' and int(len(level))== 6 and str(level[5]) in str(level):
             response ="End Murakoze kwiyandikisha kurubuga rw'ihuzo "   
 
          #=========================RTN==========
         elif text == '2*1*2':
-            response ="CON Shyiramo amazina yawe "+str(len(level))+"\n"
+            response ="CON Shyiramo amazina yawe \n"
         elif nicole =='2*1*2' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Shyiramo nimero ya telefone yawe "
+            response = "CON Shiramo Akarere utuyemo"
         elif nicole == '2*1*2'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response = "CON Shiramo Akarere utuyemo"     
-        elif nicole =='2*1*2' and int(len(level))== 6 and str(level[5]) in str(level):
             response ="End Murakoze kwiyandikisha kurubuga rw'ihuzo "    
 
         #=========================ABADASOBWA==========
         elif text == '2*1*3':
-            response ="CON Shyiramo amazina yawe "+str(len(level))+"\n"
+            response ="CON Shyiramo amazina yawe \n"
         elif nicole =='2*1*3' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Shyiramo nimero ya telefone yawe "
+            response = "CON Shiramo Akarere utuyemo"
         elif nicole == '2*1*3'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response = "CON Shiramo Akarere utuyemo"     
-        elif nicole =='2*1*3' and int(len(level))== 6 and str(level[5]) in str(level):
             response ="End Murakoze kwiyandikisha kurubuga rw'ihuzo "    
 
 
          #=========================UMUHUZA MU IKORANABUHANGA==========
         elif text == '2*1*4':
-            response ="CON Shyiramo amazina yawe "+str(len(level))+"\n"
+            response ="CON Shyiramo amazina yawe \n"
         elif nicole =='2*1*4' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Shyiramo nimero ya telefone yawe "
+            response = "CON Shiramo Akarere utuyemo"
         elif nicole == '2*1*4'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response = "CON Shiramo Akarere utuyemo"     
-        elif nicole =='2*1*4' and int(len(level))== 6 and str(level[5]) in str(level):
             response ="End Murakoze kwiyandikisha kurubuga rw'ihuzo "    
 
          #=========================freelancers==========
         elif text == '2*1*5':
-            response ="CON Shyiramo amazina yawe "+str(len(level))+"\n"
+            response ="CON Shyiramo amazina yawe \n"
         elif nicole =='2*1*5' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Shyiramo nimero ya telefone yawe "
+            response = "CON Shiramo Akarere utuyemo"
         elif nicole == '2*1*5'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response = "CON Shiramo Akarere utuyemo"     
-        elif nicole =='2*1*5' and int(len(level))== 6 and str(level[5]) in str(level):
             response ="End Murakoze kwiyandikisha kurubuga rw'ihuzo "         
 
 
@@ -344,42 +338,36 @@ def ussdapp(request):
         
          #==========UTANGA SERIVICE 
         elif text == '1*2':
-            response ="CON Utanga Serivice "+str(len(level))+"\n"
+            response ="CON Utanga Serivice \n"
             response +="1. Ikoranabuhanga muri guverinoma\n"
             response +="2. Film&other multimedia\n"
             response +="3. Application Web Development\n"
             response +="4. Ibindi\n"
-            response +="0. Go Black"   
+               
 
          #=========================EGORVERNMENT==========
         elif text == '2*2*1':
-            response ="CON Shyiramo amazina yawe "+str(len(level))+"\n"
+            response ="CON Shyiramo amazina yawe \n"
         elif nicole =='2*2*1' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Shyiramo nimero ya telefone yawe "
+            response = "CON Shiramo Akarere utuyemo"
         elif nicole == '2*2*1'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response = "CON Shiramo Akarere utuyemo"     
-        elif nicole =='2*2*1' and int(len(level))== 6 and str(level[5]) in str(level):
             response ="End Murakoze kwiyandikisha kurubuga rw'ihuzo "    
 
         #=========================Film&other multimedia==========
         elif text == '2*2*2':
-            response ="CON Shyiramo amazina yawe "+str(len(level))+"\n"
+            response ="CON Shyiramo amazina yawe \n"
         elif nicole =='2*2*2' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Shyiramo nimero ya telefone yawe "
+            response = "CON Shiramo Akarere utuyemo" 
         elif nicole == '2*2*2'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response = "CON Shiramo Akarere utuyemo"     
-        elif nicole =='2*2*2' and int(len(level))== 6 and str(level[5]) in str(level):
             response ="End Murakoze kwiyandikisha kurubuga rw'ihuzo "  
 
 
          #=========================Application Web Development==========
         elif text == '2*2*3':
-            response ="CON Shyiramo amazina yawe "+str(len(level))+"\n"
+            response ="CON Shyiramo amazina yawe \n"
         elif nicole =='2*2*3' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Shyiramo nimero ya telefone yawe "
+            response = "CON Shiramo Akarere utuyemo"
         elif nicole == '2*2*3'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response = "CON Shiramo Akarere utuyemo"     
-        elif nicole =='2*2*3' and int(len(level))== 6 and str(level[5]) in str(level):
             response ="End Murakoze kwiyandikisha kurubuga rw'ihuzo "    
 
 
@@ -389,7 +377,7 @@ def ussdapp(request):
 
         #===========ubucuruzi buto nubucuriritse
         elif text == '2*3':
-            response ="CON Kwandikisha ubucuruzi ku mbuga zicururizwaho kuri interineti "+str(len(level))+"\n"
+            response ="CON Kwandikisha ubucuruzi ku mbuga zicururizwaho kuri interineti \n"
             response +="1. Ikoranabuhanga mu buhinzi\n"
             response +="2. Ikoranabuhanga mu burezi\n"
             response +="3. Ikoranabuhanga mu buvuzi\n"
@@ -397,22 +385,20 @@ def ussdapp(request):
             response +="5. Ubucuruzi bwo kuri interineti\n"
             response +="6. Ikoranabuhanga mu ibikorwa remezo\n"
             response +="7. Ikoranabuhanga mu guhererekanya amafaranga\n"
-            response +="8. Others\n"
-            response +="0. Go Black"   
+            response +="8. Ibindi\n"
+             
 
         #===========agritech
         elif text == '2*3*1':
-            response ="CON Shyiramo amazina yawe "+str(len(level))+"\n"
+            response ="CON Shyiramo amazina yawe \n"
         elif nicole =='2*3*1' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Shyiramo nimero ya telefone yawe "
+             response = "CON Shiramo Akarere utuyemo"
         elif nicole == '2*3*1'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response = "CON Shiramo Akarere utuyemo"     
-        elif nicole =='2*3*1' and int(len(level))== 6 and str(level[5]) in str(level):
             response ="End Murakoze kwiyandikisha kurubuga rw'ihuzo "   
 
         #===========edtech
         elif text == '2*3*2':
-            response ="CON Shyiramo amazina yawe "+str(len(level))+"\n"
+            response ="CON Shyiramo amazina yawe \n"
         elif nicole =='2*3*2' and int(len(level))== 4 and str(level[3]) in str(level):
             response ="CON Shyiramo nimero ya telefone yawe "
         elif nicole == '2*3*2'and int(len(level))== 5 and str(level[4]) in str(level):  
