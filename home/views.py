@@ -62,7 +62,7 @@ def ussdapp(request):
             response +="4. Digital Ambsasador\n"
             response +="5. Freelancers\n"
             response +="6. Other\n"
-            response +="0. Go Black"
+            # response +="0. Go Black"
              #=========================CAN==========
         elif nicole =='1*1*1' and int(len(level))== 5 and str(level[4]) in str(level):
             response ="End Thank you for registering "
@@ -80,7 +80,7 @@ def ussdapp(request):
         elif nicole == '1*1*1'and int(len(level))== 5 and str(level[4]) in str(level):  
             response = "CON Enter Your District"     
         elif nicole =='1*1*1' and int(len(level))== 6 and str(level[5]) in str(level):
-            response ="End Thank you for registering "
+            response = "END Thank you for registering "
         # elif nicole =='1*1*1' and  int(len(level))==3 and str(level[2]) in str(level):
         # elif nicole =='1*1*1' and  int(len(level))==4 and str(level[1]) in str(level):
         #     response ="CON Enter your District"
