@@ -89,6 +89,10 @@ def ussdapp(request):
         elif nicole =='1*1*2' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'Iworkers'
             sector ='RTN'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Thank you for registering "    
 
         #=========================ABADASOBWA==========
@@ -99,6 +103,10 @@ def ussdapp(request):
         elif nicole =='1*1*3' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'Iworkers'
             sector ='ABADASOBWA'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Thank you for registering "    
 
 
@@ -110,6 +118,10 @@ def ussdapp(request):
         elif nicole =='1*1*4' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'Iworkers'
             sector ='Digital Ambsasador'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Thank you for registering "    
 
          #=========================freelancers==========
@@ -120,6 +132,10 @@ def ussdapp(request):
         elif nicole =='1*1*5' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'Iworker'
             sector ='Freelancers'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Thank you for registering "        
 
 
@@ -142,6 +158,10 @@ def ussdapp(request):
         elif nicole =='1*2*1' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'Service Provider'
             sector ='Egovernment Services'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Thank you for registering "    
 
         #=========================Film&other multimedia==========
@@ -152,6 +172,10 @@ def ussdapp(request):
         elif nicole =='1*2*2' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'Service Provider'
             sector ='Film&other multimedia'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Thank you for registering "    
 
 
@@ -163,6 +187,10 @@ def ussdapp(request):
         elif nicole =='1*2*3' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'Service Provider'
             sector ='Application Web Development'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Thank you for registering "     
 
 
@@ -191,6 +219,10 @@ def ussdapp(request):
         elif nicole =='1*3*1' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'MSMEs'
             sector ='AgriTech'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Thank you for registering "   
 
         #===========edtech
@@ -201,6 +233,10 @@ def ussdapp(request):
         elif nicole =='1*3*2' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'MSMEs'
             sector ='EdTech'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Thank you for registering "
 
         #===========HeathTech
@@ -211,6 +247,10 @@ def ussdapp(request):
         elif nicole =='1*3*3' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'MSMEs'
             sector ='HeathTech'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Thank you for registering "  
 
         #===========IT & Hard Solutions
@@ -221,6 +261,10 @@ def ussdapp(request):
         elif nicole =='1*3*4' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'MSMEs'
             sector ='IT & Hard Solutions'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Thank you for registering "
 
         #===========E-Commerce
@@ -231,6 +275,10 @@ def ussdapp(request):
         elif nicole =='1*3*5' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'MSMEs'
             sector ='E-Commerce'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Thank you for registering "     
 
         #===========Digital Infrastructure
@@ -241,6 +289,10 @@ def ussdapp(request):
         elif nicole =='1*3*6' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'MSMEs'
             sector = 'Digital Infrastructure'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Thank you for registering "          
 
         #===========FINTECH
@@ -251,6 +303,10 @@ def ussdapp(request):
         elif nicole =='1*3*7' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'MSMEs'
             sector = 'FinTech'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Thank you for registering "  
 
 
