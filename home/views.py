@@ -74,7 +74,7 @@ def ussdapp(request):
             sector ='CAN'
             fullname= str(level[3])
             district=str(level[4])
-            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email=email)
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
             reg.insert()
             response = "END Thank you for registering "
         # elif nicole =='1*1*1' and  int(len(level))==3 and str(level[2]) in str(level):

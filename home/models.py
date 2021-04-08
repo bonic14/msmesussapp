@@ -21,7 +21,7 @@ class Ihuzo(models.Model):
     sector =models.CharField(max_length=255)
     Fullname = models.CharField(max_length=255)   
     phoneNumber = models.CharField(max_length=255)
-    email = models.CharField(max_length=255)
+    email = models.CharField(max_length=255,default='')
     District = models.CharField(max_length=255)
     def __str__(self):
         return self.phoneNumber 
