@@ -478,7 +478,13 @@ def ussdapp(request):
             response ="CON Shyiramo amazina yawe \n"
         elif nicole =='2*3*1' and int(len(level))== 4 and str(level[3]) in str(level):
              response = "CON Shiramo Akarere utuyemo"
-        elif nicole == '2*3*1'and int(len(level))== 5 and str(level[4]) in str(level):  
+        elif nicole == '2*3*1'and int(len(level))== 5 and str(level[4]) in str(level): 
+            category = 'MSMEs'
+            sector ='AgriTech'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save() 
             response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "   
 
         #===========edtech
