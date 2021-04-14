@@ -1,3 +1,4 @@
+import csv
 from django.shortcuts import render
 import africastalking
 from .models import *
@@ -6,6 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from .serializers import*
 from django.http import HttpResponse
+from .models import Ihuzo
 username = "nsabihamiss@gmail.com"
 api_key = "7a6e5b772d94fc4af67cb8e9ac0b656af8ab659b27e422c2a1105d374bcb4662"
 africastalking.initialize(username,api_key)
@@ -51,16 +53,15 @@ def ussdapp(request):
             response ="CON Register Here To The Digital Commerce Partners For Your Business \n"
             response +="1. Become an Iworkers\n"
             response +="2. Service Provider\n"
-            response +="3. MSMEs\n"
-            response +="0. Go Black"
+            response +="3. Business\n"
            #===========become iworkers registration
         elif text == '1*1':
             response =" CON Register  to Become an iWorker  on Digital Platforms \n"
-            response +="1. CAN\n"
-            response +="2. RTN\n"
+            response +="1. CAN Agents \n"
+            response +="2. RTN Agents\n"
             response +="3. ABADASOBWA\n"
             response +="4. Digital Ambsasador\n"
-            response +="5. Freelancers\n"
+            response +="5. Klab Freelancers \n"
             response +="6. Other\n"
             # response +="0. Go Black"
              #=========================CAN==========
@@ -77,9 +78,7 @@ def ussdapp(request):
             reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
             reg.save()
             response = "END Thank you for registering "
-        # elif nicole =='1*1*1' and  int(len(level))==3 and str(level[2]) in str(level):
-        # elif nicole =='1*1*1' and  int(len(level))==4 and str(level[1]) in str(level):
-        #     response ="CON Enter your District"
+      
       
           #=========================RTN==========
         elif text == '1*1*2':
@@ -143,7 +142,7 @@ def ussdapp(request):
         
          #===========DSP registration 
         elif text == '1*2':
-            response ="CON Digital Service Provider \n"
+            response ="CON What Digital Service do you Provider \n"
             response +="1. Egovernment Services\n"
             response +="2. Film&other multimedia\n"
             response +="3. Application Web Development\n"
@@ -200,14 +199,14 @@ def ussdapp(request):
 
         #===========MSMEs registration
         elif text == '1*3':
-            response ="CON Join Hundreds of  E-commerce & Digital Platforms  Register Your business Here \n"
-            response +="1. AgriTech\n"
-            response +="2. EdTech\n"
-            response +="3. HeathTech\n"
-            response +="4. IT & Hard Solutions\n"
+            response ="CON What kind of Business are you,Register Your business Here \n"
+            response +="1. Agriculture\n"
+            response +="2. Education\n"
+            response +="3. Heath\n"
+            response +="4. IT & Hardware Solutions\n"
             response +="5. E-Commerce\n"
             response +="6. Digital Infrastructure\n"
-            response +="7. FinTech\n"
+            response +="7. Finacial \n"
             response +="8. Others\n"
               
 
@@ -344,7 +343,7 @@ def ussdapp(request):
             response +="2. RTN\n"
             response +="3. ABADASOBWA\n"
             response +="4. Umuhuza mu ikoranabuhanga\n"
-            response +="5. freelancers \n"
+            response +="5. klab freelancers \n"
             response +="6. ibindi \n"
             
 
@@ -353,24 +352,42 @@ def ussdapp(request):
             response ="CON Shyiramo amazina yawe \n"
         elif nicole =='2*1*1' and int(len(level))== 4 and str(level[3]) in str(level):
             response = "CON Shiramo Akarere utuyemo"
-        elif nicole == '2*1*1'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response ="End Murakoze kwiyandikisha kurubuga rw'ihuzo "   
+        elif nicole == '2*1*1'and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Iworkers'
+            sector ='CAN'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()   
+            response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "   
 
          #=========================RTN==========
         elif text == '2*1*2':
             response ="CON Shyiramo amazina yawe \n"
         elif nicole =='2*1*2' and int(len(level))== 4 and str(level[3]) in str(level):
             response = "CON Shiramo Akarere utuyemo"
-        elif nicole == '2*1*2'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response ="End Murakoze kwiyandikisha kurubuga rw'ihuzo "    
+        elif nicole == '2*1*2'and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Iworkers'
+            sector ='RTN'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()  
+            response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "    
 
         #=========================ABADASOBWA==========
         elif text == '2*1*3':
             response ="CON Shyiramo amazina yawe \n"
         elif nicole =='2*1*3' and int(len(level))== 4 and str(level[3]) in str(level):
             response = "CON Shiramo Akarere utuyemo"
-        elif nicole == '2*1*3'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response ="End Murakoze kwiyandikisha kurubuga rw'ihuzo "    
+        elif nicole == '2*1*3'and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Iworkers'
+            sector ='ABADASOBWA'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()  
+            response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "    
 
 
          #=========================UMUHUZA MU IKORANABUHANGA==========
@@ -378,16 +395,28 @@ def ussdapp(request):
             response ="CON Shyiramo amazina yawe \n"
         elif nicole =='2*1*4' and int(len(level))== 4 and str(level[3]) in str(level):
             response = "CON Shiramo Akarere utuyemo"
-        elif nicole == '2*1*4'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response ="End Murakoze kwiyandikisha kurubuga rw'ihuzo "    
+        elif nicole == '2*1*4'and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Iworkers'
+            sector ='Digital Ambsasador'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()  
+            response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "    
 
          #=========================freelancers==========
         elif text == '2*1*5':
             response ="CON Shyiramo amazina yawe \n"
         elif nicole =='2*1*5' and int(len(level))== 4 and str(level[3]) in str(level):
             response = "CON Shiramo Akarere utuyemo"
-        elif nicole == '2*1*5'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response ="End Murakoze kwiyandikisha kurubuga rw'ihuzo "         
+        elif nicole == '2*1*5'and int(len(level))== 5 and str(level[4]) in str(level): 
+            category = 'Iworker'
+            sector ='Freelancers'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save() 
+            response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "         
 
 
 
@@ -407,7 +436,7 @@ def ussdapp(request):
         elif nicole =='2*2*1' and int(len(level))== 4 and str(level[3]) in str(level):
             response = "CON Shiramo Akarere utuyemo"
         elif nicole == '2*2*1'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response ="End Murakoze kwiyandikisha kurubuga rw'ihuzo "    
+            response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "    
 
         #=========================Film&other multimedia==========
         elif text == '2*2*2':
@@ -415,7 +444,7 @@ def ussdapp(request):
         elif nicole =='2*2*2' and int(len(level))== 4 and str(level[3]) in str(level):
             response = "CON Shiramo Akarere utuyemo" 
         elif nicole == '2*2*2'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response ="End Murakoze kwiyandikisha kurubuga rw'ihuzo "  
+            response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "  
 
 
          #=========================Application Web Development==========
@@ -424,7 +453,7 @@ def ussdapp(request):
         elif nicole =='2*2*3' and int(len(level))== 4 and str(level[3]) in str(level):
             response = "CON Shiramo Akarere utuyemo"
         elif nicole == '2*2*3'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response ="End Murakoze kwiyandikisha kurubuga rw'ihuzo "    
+            response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "    
 
 
 
@@ -450,7 +479,7 @@ def ussdapp(request):
         elif nicole =='2*3*1' and int(len(level))== 4 and str(level[3]) in str(level):
              response = "CON Shiramo Akarere utuyemo"
         elif nicole == '2*3*1'and int(len(level))== 5 and str(level[4]) in str(level):  
-            response ="End Murakoze kwiyandikisha kurubuga rw'ihuzo "   
+            response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "   
 
         #===========edtech
         elif text == '2*3*2':
@@ -460,7 +489,7 @@ def ussdapp(request):
         elif nicole == '2*3*2'and int(len(level))== 5 and str(level[4]) in str(level):  
             response = "CON Shiramo Akarere utuyemo"     
         elif nicole =='2*3*2' and int(len(level))== 6 and str(level[5]) in str(level):
-            response ="End Murakoze kwiyandikisha kurubuga rw'ihuzo "   
+            response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "   
 
         #===========HeathTech
         elif text == '2*3*3':
@@ -470,7 +499,7 @@ def ussdapp(request):
         elif nicole == '2*3*3'and int(len(level))== 5 and str(level[4]) in str(level):  
             response = "CON Shiramo Akarere utuyemo"     
         elif nicole =='2*3*3' and int(len(level))== 6 and str(level[5]) in str(level):
-            response ="End Murakoze kwiyandikisha kurubuga rw'ihuzo "    
+            response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "    
 
         #===========IT & Hard Solutions
         elif text == '2*3*4':
@@ -480,7 +509,7 @@ def ussdapp(request):
         elif nicole == '2*3*4'and int(len(level))== 5 and str(level[4]) in str(level):  
             response = "CON Shiramo Akarere utuyemo"     
         elif nicole =='2*3*4' and int(len(level))== 6 and str(level[5]) in str(level):
-            response ="End Murakoze kwiyandikisha kurubuga rw'ihuzo "   
+            response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "   
 
         #===========E-Commerce
         elif text == '2*3*5':
@@ -490,26 +519,26 @@ def ussdapp(request):
         elif nicole == '2*3*5'and int(len(level))== 5 and str(level[4]) in str(level):  
             response = "CON Shiramo Akarere utuyemo"     
         elif nicole =='2*3*5' and int(len(level))== 6 and str(level[5]) in str(level):
-            response ="End Murakoze kwiyandikisha kurubuga rw'ihuzo "        
+            response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "        
 
         #===========E-Digital Infrastructure
         elif text == '2*3*6':
-            response ="CON Shyiramo amazina yawe "+str(len(level))+"\n"
+            response ="CON Shyiramo amazina yawe \n"
         elif nicole =='2*3*6' and int(len(level))== 4 and str(level[3]) in str(level):
             response ="CON Shyiramo nimero ya telefone yawe "
         elif nicole == '2*3*6'and int(len(level))== 5 and str(level[4]) in str(level):  
             response = "CON Shiramo Akarere utuyemo"     
         elif nicole =='2*3*6' and int(len(level))== 6 and str(level[5]) in str(level):
-            response ="End Murakoze kwiyandikisha kurubuga rw'ihuzo " 
+            response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo " 
         #=======================fintech
         elif text == '2*3*7':
-            response ="CON Shyiramo amazina yawe "+str(len(level))+"\n"
+            response ="CON Shyiramo amazina yawe \n"
         elif nicole =='2*3*7' and int(len(level))== 4 and str(level[3]) in str(level):
             response ="CON Shyiramo nimero ya telefone yawe "
         elif nicole == '2*3*7'and int(len(level))== 5 and str(level[4]) in str(level):  
             response = "CON Shiramo Akarere utuyemo"     
         elif nicole =='2*3*7' and int(len(level))== 6 and str(level[5]) in str(level):
-            response ="End Murakoze kwiyandikisha kurubuga rw'ihuzo "              
+            response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "              
           
            
 
@@ -519,14 +548,25 @@ def ussdapp(request):
             
 
         else:
-            response ="END Invalid choice "    
+            response ="END Invalid choice "   
+
 
 
         return HttpResponse(response)
 
+
+    ######csv file ####################
     
 
-    return HttpResponse('welcome')
+    response = HttpResponse(content_type='text/csv')
+
+    writer = csv.writer(response)
+    writer.writerow(['category','sector','Fullname','District','phoneNumber'])
+
+    for member in Member.objects.all().values_list('category','sector','Fullname','District','phoneNumber'):
+        writer.writerow(member)
+    response ['Content-Disposition'] = 'attachment; filename="members.csv"'    
+    return response
 
 
 def registration(request):
