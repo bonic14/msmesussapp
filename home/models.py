@@ -1,5 +1,6 @@
 from django.db import models
-
+from csvexport.actions import csvexport
+from django.contrib import admin
 # Create your models here.
 # class Employees(models.Model):
 #     firstname = models.CharField(max_length=255)
@@ -25,8 +26,7 @@ class Ihuzo(models.Model):
     District = models.CharField(max_length=255)
     def __str__(self):
         return self.phoneNumber 
-       
-        
+
 
         
 

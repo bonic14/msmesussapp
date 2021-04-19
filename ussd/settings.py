@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'rest_framework.authtoken',
-    'csvexport'
+    'import_export',
+   
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+IMPORT_EXPORT_USE_TRANSACTIONS = True
