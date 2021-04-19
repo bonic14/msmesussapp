@@ -158,9 +158,9 @@ def ussdapp(request):
         
          #===========DSP registration 
         elif text == '1*2':
-            response ="CON What the service you offer \n"
+            response ="CON What  services do you offer \n"
             response +="1. Egovernment Services\n"
-            response +="2. Finacial Services\n"
+            response +="2. Financial Services\n"
             response +="3. Real estate Services\n"
             response +="4. Internet Services\n"
             response +="5. Insurance Services\n"
@@ -290,15 +290,15 @@ def ussdapp(request):
 
         #===========MSMEs registration
         elif text == '1*3':
-            response ="CON What kind of Business are you,Register Your business Here \n"
+            response ="CON Which business to register for Ihuzo \n"
             response +="1. AgriBusiness\n"
-            response +="2. Education\n"
-            response +="3. Heathcare\n"
+            response +="2. Schools&training providers\n"
+            response +="3. Multimedia&Photography\n"
             response +="4. ICT products&Services\n"
-            response +="5. Trading\n"
-            response +="6. Tourism\n"
-            response +="7. Arts&Crafts \n"
-            response +="8. Other\n"
+            response +="5. Retail shops&wholesalersn"
+            response +="6. Travel tours,hotels&restaurants\n"
+            response +="7. Arts,crafts&fashion\n"
+            response +="8. Others\n"
               
 
         #===========agritech
@@ -329,21 +329,21 @@ def ussdapp(request):
             reg.save()
             response ="END Thank you for registering "
 
-        #===========HeathTech
+        #===========Multimedia
         elif text == '1*3*3':
             response ="CON Enter Your Fullname \n"
         elif nicole =='1*3*3' and int(len(level))== 4 and str(level[3]) in str(level):
             response ="CON Enter Your District "  
         elif nicole =='1*3*3' and int(len(level))== 5 and str(level[4]) in str(level):
             category = 'MSMEs'
-            sector ='Heathcare'
+            sector ='Multimedia'
             fullname= str(level[3])
             district=str(level[4])
             reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
             reg.save()
             response ="END Thank you for registering "  
 
-        #===========IT & Hard Solutions
+        #===========ICT 
         elif text == '1*3*4':
             response ="CON Enter Your Fullname \n"
         elif nicole =='1*3*4' and int(len(level))== 4 and str(level[3]) in str(level):
@@ -444,12 +444,12 @@ def ussdapp(request):
           
         elif text =='2*1':
             response ="CON Kwiyandikisha nk’umuhuza \n"
-            response +="1. CAN\n"
-            response +="2. RTN\n"
+            response +="1. Umukozi wa CAN\n"
+            response +="2. Umukozi wa RTN\n"
             response +="3. ABADASOBWA\n"
             response +="4. Umuhuza mu ikoranabuhanga\n"
-            response +="5. klab freelancers \n"
-            response +="6. ibindi \n"
+            response +="5. Klab freelancers \n"
+            response +="6. Undi muhuza \n"
             
 
          #=========================CAN==========
@@ -521,18 +521,37 @@ def ussdapp(request):
             district=str(level[4])
             reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
             reg.save() 
-            response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "         
+            response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo " 
+         #=========================izindi serivisi==========
+        elif text == '2*1*5':
+            response ="CON Shyiramo amazina yawe \n"
+        elif nicole =='2*1*5' and int(len(level))== 4 and str(level[3]) in str(level):
+            response = "CON Shiramo Akarere utuyemo"
+        elif nicole == '2*1*5'and int(len(level))== 5 and str(level[4]) in str(level): 
+            category = 'Iworker'
+            sector ='izindi serivisi'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save() 
+            response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "    
+            
+
 
 
 
         
          #==========UTANGA SERIVICE 
         elif text == '1*2':
-            response ="CON Utanga Serivice \n"
-            response +="1. Ikoranabuhanga muri guverinoma\n"
-            response +="2. Film&other multimedia\n"
-            response +="3. Umutungo Utimukanwa\n"
-            response +="4. Ibindi\n"
+            response ="CON Ni izihe serivisi utanga \n"
+            response +="1. Serivisi za leta\n"
+            response +="2. Financial Services\n"
+            response +="3. Real estate Services\n"
+            response +="4. Serivisi za interineti\n"
+            response +="5. Serivisi zubwishingizi\n"
+            response +="6. Ivunjisha\n"
+            response +="7. App developer\n"
+            response +="8. Izindi Serivisi\n"
                
 
          #=========================EGORVERNMENT==========
@@ -540,25 +559,99 @@ def ussdapp(request):
             response ="CON Shyiramo amazina yawe \n"
         elif nicole =='2*2*1' and int(len(level))== 4 and str(level[3]) in str(level):
             response = "CON Shiramo Akarere utuyemo"
-        elif nicole == '2*2*1'and int(len(level))== 5 and str(level[4]) in str(level):  
+        elif nicole == '2*2*1'and int(len(level))== 5 and str(level[4]) in str(level): 
+            category = 'Service Provider'
+            sector ='Egovernment Services'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "    
 
-        #=========================Film&other multimedia==========
+        #=========================real estate==========
         elif text == '2*2*2':
             response ="CON Shyiramo amazina yawe \n"
         elif nicole =='2*2*2' and int(len(level))== 4 and str(level[3]) in str(level):
             response = "CON Shiramo Akarere utuyemo" 
-        elif nicole == '2*2*2'and int(len(level))== 5 and str(level[4]) in str(level):  
+        elif nicole == '2*2*2'and int(len(level))== 5 and str(level[4]) in str(level): 
+            category = 'Service Provider'
+            sector ='real estate'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save() 
             response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "  
 
 
-         #=========================Application Web Development==========
+         #=========================internet service==========
         elif text == '2*2*3':
             response ="CON Shyiramo amazina yawe \n"
         elif nicole =='2*2*3' and int(len(level))== 4 and str(level[3]) in str(level):
             response = "CON Shiramo Akarere utuyemo"
-        elif nicole == '2*2*3'and int(len(level))== 5 and str(level[4]) in str(level):  
+        elif nicole == '2*2*3'and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Service Provider'
+            sector ='internet service'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()  
             response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "    
+
+
+        #=========================insurance==========
+        elif text == '2*2*3':
+            response ="CON Shyiramo amazina yawe \n"
+        elif nicole =='2*2*3' and int(len(level))== 4 and str(level[3]) in str(level):
+            response = "CON Shiramo Akarere utuyemo"
+        elif nicole == '2*2*3'and int(len(level))== 5 and str(level[4]) in str(level): 
+            category = 'Service Provider'
+            sector ='insurance Services'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save() 
+            response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "    
+
+        #=========================forin exchange==========
+        elif text == '2*2*3':
+            response ="CON Shyiramo amazina yawe \n"
+        elif nicole =='2*2*3' and int(len(level))== 4 and str(level[3]) in str(level):
+            response = "CON Shiramo Akarere utuyemo"
+        elif nicole == '2*2*3'and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Service Provider'
+            sector ='translition Services'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()  
+            response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "    
+        #=========================app developer==========
+        elif text == '2*2*3':
+            response ="CON Shyiramo amazina yawe \n"
+        elif nicole =='2*2*3' and int(len(level))== 4 and str(level[3]) in str(level):
+            response = "CON Shiramo Akarere utuyemo"
+        elif nicole == '2*2*3'and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Service Provider'
+            sector ='app developer'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()  
+            response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "    
+
+        #=========================ibindi==========
+        elif text == '2*2*3':
+            response ="CON Shyiramo amazina yawe \n"
+        elif nicole =='2*2*3' and int(len(level))== 4 and str(level[3]) in str(level):
+            response = "CON Shiramo Akarere utuyemo"
+        elif nicole == '2*2*3'and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Service Provider'
+            sector ='others'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
+            response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "                
 
 
 
@@ -600,6 +693,12 @@ def ussdapp(request):
         elif nicole == '2*3*2'and int(len(level))== 5 and str(level[4]) in str(level):  
             response = "CON Shiramo Akarere utuyemo"     
         elif nicole =='2*3*2' and int(len(level))== 6 and str(level[5]) in str(level):
+            category = 'MSMEs'
+            sector ='AgriTech'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "   
 
         #===========HeathTech
@@ -610,6 +709,12 @@ def ussdapp(request):
         elif nicole == '2*3*3'and int(len(level))== 5 and str(level[4]) in str(level):  
             response = "CON Shiramo Akarere utuyemo"     
         elif nicole =='2*3*3' and int(len(level))== 6 and str(level[5]) in str(level):
+            category = 'MSMEs'
+            sector ='AgriTech'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "    
 
         #===========IT & Hard Solutions
@@ -620,6 +725,12 @@ def ussdapp(request):
         elif nicole == '2*3*4'and int(len(level))== 5 and str(level[4]) in str(level):  
             response = "CON Shiramo Akarere utuyemo"     
         elif nicole =='2*3*4' and int(len(level))== 6 and str(level[5]) in str(level):
+            category = 'MSMEs'
+            sector ='AgriTech'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "   
 
         #===========E-Commerce
@@ -630,6 +741,12 @@ def ussdapp(request):
         elif nicole == '2*3*5'and int(len(level))== 5 and str(level[4]) in str(level):  
             response = "CON Shiramo Akarere utuyemo"     
         elif nicole =='2*3*5' and int(len(level))== 6 and str(level[5]) in str(level):
+            category = 'MSMEs'
+            sector ='AgriTech'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "        
 
         #===========E-Digital Infrastructure
@@ -640,6 +757,12 @@ def ussdapp(request):
         elif nicole == '2*3*6'and int(len(level))== 5 and str(level[4]) in str(level):  
             response = "CON Shiramo Akarere utuyemo"     
         elif nicole =='2*3*6' and int(len(level))== 6 and str(level[5]) in str(level):
+            category = 'MSMEs'
+            sector ='AgriTech'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo " 
         #=======================fintech
         elif text == '2*3*7':
@@ -649,6 +772,12 @@ def ussdapp(request):
         elif nicole == '2*3*7'and int(len(level))== 5 and str(level[4]) in str(level):  
             response = "CON Shiramo Akarere utuyemo"     
         elif nicole =='2*3*7' and int(len(level))== 6 and str(level[5]) in str(level):
+            category = 'MSMEs'
+            sector ='AgriTech'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Murakoze kwiyandikisha kurubuga rw'ihuzo "              
           
            
