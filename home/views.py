@@ -715,7 +715,7 @@ def ussdapp(request):
 
         #===========HeathTech
         elif text == '2*3*3':
-            response ="CON Shyiramo amazina yawe "+str(len(level))+"\n"
+            response ="CON Shyiramo amazina yawe \n"
         elif nicole =='2*3*3' and int(len(level))== 4 and str(level[3]) in str(level):
             response = "CON Shiramo Akarere utuyemo"     
         elif nicole == '2*3*3'and int(len(level))== 5 and str(level[4]) in str(level):  
@@ -729,7 +729,7 @@ def ussdapp(request):
 
         #===========IT & Hard Solutions
         elif text == '2*3*4':
-            response ="CON Shyiramo amazina yawe "+str(len(level))+"\n"
+            response ="CON Shyiramo amazina yawe \n"
         elif nicole =='2*3*4' and int(len(level))== 4 and str(level[3]) in str(level):
             response = "CON Shiramo Akarere utuyemo"     
         elif nicole == '2*3*4'and int(len(level))== 5 and str(level[4]) in str(level):  
@@ -743,7 +743,7 @@ def ussdapp(request):
 
         #===========trading
         elif text == '2*3*5':
-            response ="CON Shyiramo amazina yawe "+str(len(level))+"\n"
+            response ="CON Shyiramo amazina yawe \n"
         elif nicole =='2*3*5' and int(len(level))== 4 and str(level[3]) in str(level):
             response = "CON Shiramo Akarere utuyemo"
         elif nicole == '2*3*5'and int(len(level))== 5 and str(level[4]) in str(level):  
@@ -784,7 +784,7 @@ def ussdapp(request):
 
         #===========other business
         elif text == '2*3*8':
-            response ="CON Enter Shyiramo amazina yawe "+str(len(level))+"\n"
+            response ="CON Enter Shyiramo amazina yawe \n"
         elif nicole =='2*3*8' and int(len(level))== 4 and str(level[3]) in str(level):
             response ="CON Enter Shyiramo Akarere utuyemo "
         elif nicole =='2*3*8' and int(len(level))== 5 and str(level[4]) in str(level):
