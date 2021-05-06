@@ -82,7 +82,7 @@ def ussdapp(request):
             #     reg.save()
             #     response = "END Thank you for registering "
             # else:
-            response = "END "+name
+            response = "END hhhhhh"
 
       
       
