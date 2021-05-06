@@ -77,8 +77,7 @@ def ussdapp(request):
             district=str(level[4])
             name=fullname.count()
             dis=district.count()
-
-            if name >=2 and dis >=2: 
+            if name >=2: 
                 reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
                 reg.save()
                 response = "END Thank you for registering "
