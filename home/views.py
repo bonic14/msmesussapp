@@ -75,7 +75,7 @@ def ussdapp(request):
             sector ='CAN'
             fullname= str(level[3])
             district=str(level[4])
-            namect=fullname.count()
+            namect=str(fullname.)count()
             # dis=district.count()
             # if name >=2: 
             #     reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
