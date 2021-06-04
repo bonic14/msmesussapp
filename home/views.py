@@ -45,9 +45,10 @@ def ussdapp(request):
 
         nicole = text[:5]
         if text =='':
-            response = "CON Welcome to IHUZO Rwanda  \n "
-            response +="1. English \n"
-            response +="2. Kinyarwanda"
+            response = "CON MURAKAZA NEZA KURI MSMES GO DIGITAL\n "
+            response +="CON AGURA UBUCURUZI BWAWE WIFASHIJE IKORANABUHANGA\n"
+            response +="1.Kwiyandikisha"
+            
         elif text == '1':
             # update = SessionsModel.objects.filter(sessionID=session_id).update(newsession='')
             response ="CON Register Here To The Digital Commerce Partners For Your Business \n"
