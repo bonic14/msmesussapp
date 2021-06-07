@@ -58,14 +58,17 @@ def ussdapp(request):
             response +="4. Ibikomoka Kubuhinzi\n"
             response +="5. Ibikoresho byubwubatsi\n"
             response +="6. Ubugeni n'ubukorikori\n"
-            response +="7. Ubundi bucuruzi\n"
+            response +="7. Others\n"
            #===========become iworkers registration
         elif text == '1*1':
-            response ="CON Andika amazina yawe \n"
-        elif nicole =='1*1' and int(len(level))== 4 and str(level[3]) in str(level):
-            response = "CON Andika akarere utuyemo"
-        elif nicole == '1*1'and int(len(level))== 5 and str(level[4]) in str(level):
-            response +="0. Go Black"
+            response =" CON Register  to Become an iWorker  on Digital Platforms \n"
+            response +="1. CAN Agents \n"
+            response +="2. RTN Agents\n"
+            response +="3. ABADASOBWA\n"
+            response +="4. Digital Ambsasador\n"
+            response +="5. Klab Freelancers \n"
+            response +="6. Others\n"
+            # response +="0. Go Black"
              #=========================CAN==========
  
         elif text == '1*1*1':
