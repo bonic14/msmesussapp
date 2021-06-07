@@ -62,9 +62,9 @@ def ussdapp(request):
            #===========become iworkers registration
         elif text == '1*1':
             response ="CON Andika amazina yawe \n"
-        elif nicole =='2*1*1' and int(len(level))== 4 and str(level[3]) in str(level):
+        elif nicole =='1*1' and int(len(level))== 4 and str(level[3]) in str(level):
             response = "CON Andika akarere utuyemo"
-        elif nicole == '2*1*1'and int(len(level))== 5 and str(level[4]) in str(level):
+        elif nicole == '1*1'and int(len(level))== 5 and str(level[4]) in str(level):
             response +="0. Go Black"
              #=========================CAN==========
  
