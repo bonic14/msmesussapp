@@ -62,14 +62,14 @@ def ussdapp(request):
            #===========amaduka
         elif text == '1*1':
             response ="CON Andika amazina yawe \n"
-        elif nicole =='1*1' and int(len(level))== 4 and str(level[3]) in str(level):
+        elif nicole =='1*1' and int(len(level))== 3 and str(level[2]) in str(level):
             response = "CON Andika akarere utuyemo"
-        elif nicole == '1*1'and int(len(level))== 5 and str(level[4]) in str(level):
+        elif nicole == '1*1'and int(len(level))== 4 and str(level[3]) in str(level):
         
             category = 'Amaduka'
            
-            fullname= str(level[3])
-            district=str(level[4])
+            fullname= str(level[2])
+            district=str(level[3])
             # namect=len(fullname)
             # dis=district.count()
             # if name >=2: 
