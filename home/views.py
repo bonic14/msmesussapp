@@ -59,23 +59,30 @@ def ussdapp(request):
             response +="5. Ibikoresho byubwubatsi\n"
             response +="6. Ubugeni n'ubukorikori\n"
             response +="7. Ubundi bucuruzi\n"
-           #===========amaduka
+           #===========become iworkers registration
         elif text == '1*1':
             response ="CON Andika amazina yawe \n"
-        elif nicole =='1*1*1' and int(len(level))== 4 and str(level[3]) in str(level):
+        elif nicole =='2*1*1' and int(len(level))== 4 and str(level[3]) in str(level):
             response = "CON Andika akarere utuyemo"
-        elif nicole == '1*1*1'and int(len(level))== 5 and str(level[4]) in str(level):
-        
-            category = 'Amaduka'
-           
+        elif nicole == '2*1*1'and int(len(level))== 5 and str(level[4]) in str(level):
+            response +="0. Go Black"
+             #=========================CAN==========
+ 
+        elif text == '1*1*1':
+            response ="CON Enter Your Fullname \n"
+        elif nicole =='1*1*1' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter Your District "
+        elif nicole =='1*1*1' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Iworkers'
+            sector ='CAN'
             fullname= str(level[3])
             district=str(level[4])
             # namect=len(fullname)
             # dis=district.count()
             # if name >=2: 
-            reg = Msmes(category=category,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
             reg.save()
-            response = "END Murakoze Kwiyandikisha "
+            response = "END Thank you for registering "
             # else:
             # response = "END Please Fill this space "+namect
 
