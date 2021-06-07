@@ -43,7 +43,7 @@ def ussdapp(request):
         response =""
         numb = text[:3]
 
-        nicole = text[:3]
+        nicole = text[:5]
         if text =='':
             response = "CON MURAKAZA NEZA KURI MSMES GO DIGITAL\n "
             response +=" AGURA UBUCURUZI BWAWE WIFASHIJE IKORANABUHANGA\n"
@@ -62,14 +62,14 @@ def ussdapp(request):
            #===========amaduka
         elif text == '1*1':
             response ="CON Andika amazina yawe \n"
-        elif nicole =='1*1' and int(len(level))== 2 and str(level[1]) in str(level):
+        elif nicole =='1*1*1' and int(len(level))== 4 and str(level[3]) in str(level):
             response = "CON Andika akarere utuyemo"
-        elif nicole == '1*1'and int(len(level))== 3 and str(level[2]) in str(level):
+        elif nicole == '1*1*1'and int(len(level))== 5 and str(level[4]) in str(level):
         
             category = 'Amaduka'
            
-            fullname= str(level[2])
-            district=str(level[3])
+            fullname= str(level[3])
+            district=str(level[4])
             # namect=len(fullname)
             # dis=district.count()
             # if name >=2: 
@@ -81,375 +81,338 @@ def ussdapp(request):
 
       
       
-          #=========================Amafunguro==========
+          #=========================RTN==========
+        elif text == '1*1*2':
+            response ="CON Enter Your Fullname \n"
+        elif nicole =='1*1*2' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter Your District " 
+        elif nicole =='1*1*2' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Iworkers'
+            sector ='RTN'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
+            response ="END Thank you for registering "    
+
+        #=========================ABADASOBWA==========
+        elif text == '1*1*3':
+            response ="CON Enter Your Fullname \n"
+        elif nicole =='1*1*3' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter Enter Your District " 
+        elif nicole =='1*1*3' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Iworkers'
+            sector ='ABADASOBWA'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
+            response ="END Thank you for registering "    
+
+
+         #=========================DIGITAL AMBASSADOR==========
+        elif text == '1*1*4':
+            response ="CON Enter Your Fullname \n"
+        elif nicole =='1*1*4' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter Your District " 
+        elif nicole =='1*1*4' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Iworkers'
+            sector ='Digital Ambsasador'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
+            response ="END Thank you for registering "    
+
+         #=========================freelancers==========
+        elif text == '1*1*5':
+            response ="CON Enter Your Fullname \n"
+        elif nicole =='1*1*5' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter Your District " 
+        elif nicole =='1*1*5' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Iworker'
+            sector ='Freelancers'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
+            response ="END Thank you for registering "    
+
+        #=========================other iworker==========
+        elif text == '1*1*6':
+            response ="CON Enter Your Fullname \n"
+        elif nicole =='1*1*6' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter Your District " 
+        elif nicole =='1*1*6' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Iworker'
+            sector ='Others'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
+            response ="END Thank you for registering "      
+
+
+
+
+
+        
+         #===========DSP registration 
         elif text == '1*2':
-            response ="CON Andika amazina yawe \n"
-        elif nicole =='1*2' and int(len(level))== 4 and str(level[3]) in str(level):
-            response = "CON Andika akarere utuyemo"
-        elif nicole == '1*2'and int(len(level))== 5 and str(level[4]) in str(level):
-        
-            category = 'Amafunguro'
-           
-            fullname= str(level[3])
-            district=str(level[4])
-            # namect=len(fullname)
-            # dis=district.count()
-            # if name >=2: 
-            reg = Msmes(category=category,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-            reg.save()
-            response = "END Murakoze Kwiyandikisha "   
-
-        #=========================Hotel==========
-        elif text == '1*3':
-            response ="CON Andika amazina yawe \n"
-        elif nicole =='1*3' and int(len(level))== 4 and str(level[3]) in str(level):
-            response = "CON Andika akarere utuyemo"
-        elif nicole == '1*3'and int(len(level))== 5 and str(level[4]) in str(level):
-        
-            category = 'Hotel'
-           
-            fullname= str(level[3])
-            district=str(level[4])
-            # namect=len(fullname)
-            # dis=district.count()
-            # if name >=2: 
-            reg = Msmes(category=category,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-            reg.save()
-            response = "END Murakoze Kwiyandikisha "
-
-
-         #=========================Dubuhinzi==========
-        elif text == '1*4':
-            response ="CON Andika amazina yawe \n"
-        elif nicole =='1*4' and int(len(level))== 4 and str(level[3]) in str(level):
-            response = "CON Andika akarere utuyemo"
-        elif nicole == '1*4'and int(len(level))== 5 and str(level[4]) in str(level):
-        
-            category = 'Ubuhinzi'
-           
-            fullname= str(level[3])
-            district=str(level[4])
-            # namect=len(fullname)
-            # dis=district.count()
-            # if name >=2: 
-            reg = Msmes(category=category,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-            reg.save()
-            response = "END Murakoze Kwiyandikisha "  
-
-         #=========================Ubwubatsi==========
-        elif text == '1*5':
-            response ="CON Andika amazina yawe \n"
-        elif nicole =='1*5' and int(len(level))== 4 and str(level[3]) in str(level):
-            response = "CON Andika akarere utuyemo"
-        elif nicole == '1*5'and int(len(level))== 5 and str(level[4]) in str(level):
-        
-            category = 'Ubwubatsi'
-           
-            fullname= str(level[3])
-            district=str(level[4])
-            # namect=len(fullname)
-            # dis=district.count()
-            # if name >=2: 
-            reg = Msmes(category=category,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-            reg.save()
-            response = "END Murakoze Kwiyandikisha "   
-
-        #=========================Ubugeni==========
-        elif text == '1*6':
-            response ="CON Andika amazina yawe \n"
-        elif nicole =='1*6' and int(len(level))== 4 and str(level[3]) in str(level):
-            response = "CON Andika akarere utuyemo"
-        elif nicole == '1*6'and int(len(level))== 5 and str(level[4]) in str(level):
-        
-            category = 'Ubugeni'
-           
-            fullname= str(level[3])
-            district=str(level[4])
-            # namect=len(fullname)
-            # dis=district.count()
-            # if name >=2: 
-            reg = Msmes(category=category,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-            reg.save()
-            response = "END Murakoze Kwiyandikisha "      
-
-        elif text == '1*7':
-            response ="CON Andika amazina yawe \n"
-        elif nicole =='1*7' and int(len(level))== 4 and str(level[3]) in str(level):
-            response = "CON Andika akarere utuyemo"
-        elif nicole == '1*7'and int(len(level))== 5 and str(level[4]) in str(level):
-        
-            category = 'Ubundi bucuruzi'
-           
-            fullname= str(level[3])
-            district=str(level[4])
-            # namect=len(fullname)
-            # dis=district.count()
-            # if name >=2: 
-            reg = Msmes(category=category,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-            reg.save()
-            response = "END Murakoze Kwiyandikisha "    
-
-
-
-
-
-        
-        #  #===========DSP registration 
-        # elif text == '1*2':
-        #     response ="CON What  services do you offer \n"
-        #     response +="1. Egovernment Services\n"
-        #     response +="2. Financial Services\n"
-        #     response +="3. Real estate Services\n"
-        #     response +="4. Internet Services\n"
-        #     response +="5. Insurance Services\n"
-        #     response +="6. Translation Services\n"
-        #     response +="7. App developer\n"
-        #     response +="8. Others\n"
+            response ="CON What  services do you offer \n"
+            response +="1. Egovernment Services\n"
+            response +="2. Financial Services\n"
+            response +="3. Real estate Services\n"
+            response +="4. Internet Services\n"
+            response +="5. Insurance Services\n"
+            response +="6. Translation Services\n"
+            response +="7. App developer\n"
+            response +="8. Others\n"
               
 
-        #  #=========================EGORVERNMENT==========
-        # elif text == '1*2*1':
-        #     response ="CON Enter Your Fullname \n"
-        # elif nicole =='1*2*1' and int(len(level))== 4 and str(level[3]) in str(level):
-        #     response ="CON Enter Your District " 
-        # elif nicole =='1*2*1' and int(len(level))== 5 and str(level[4]) in str(level):
-        #     category = 'Service Provider'
-        #     sector ='Egovernment Services'
-        #     fullname= str(level[3])
-        #     district=str(level[4])
-        #     reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-        #     reg.save()
-        #     response ="END Thank you for registering "    
+         #=========================EGORVERNMENT==========
+        elif text == '1*2*1':
+            response ="CON Enter Your Fullname \n"
+        elif nicole =='1*2*1' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter Your District " 
+        elif nicole =='1*2*1' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Service Provider'
+            sector ='Egovernment Services'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
+            response ="END Thank you for registering "    
 
-        # #=========================finacial==========
-        # elif text == '1*2*2':
-        #     response ="CON Enter Your Fullname \n"
-        # elif nicole =='1*2*2' and int(len(level))== 4 and str(level[3]) in str(level):
-        #     response ="CON Enter Your District " 
-        # elif nicole =='1*2*2' and int(len(level))== 5 and str(level[4]) in str(level):
-        #     category = 'Service Provider'
-        #     sector ='Financial Services'
-        #     fullname= str(level[3])
-        #     district=str(level[4])
-        #     reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-        #     reg.save()
-        #     response ="END Thank you for registering "  
+        #=========================finacial==========
+        elif text == '1*2*2':
+            response ="CON Enter Your Fullname \n"
+        elif nicole =='1*2*2' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter Your District " 
+        elif nicole =='1*2*2' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Service Provider'
+            sector ='Financial Services'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
+            response ="END Thank you for registering "  
 
 
 
-        #  #=========================Real estate services==========
-        # elif text == '1*2*3':
-        #     response ="CON Enter Your Fullname \n"
-        # elif nicole =='1*2*3' and int(len(level))== 4 and str(level[3]) in str(level):
-        #     response ="CON Enter  Your District " 
-        # elif nicole =='1*2*3' and int(len(level))== 5 and str(level[4]) in str(level):
-        #     category = 'Service Provider'
-        #     sector ='Real estate services'
-        #     fullname= str(level[3])
-        #     district=str(level[4])
-        #     reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-        #     reg.save()
-        #     response ="END Thank you for registering "   
+         #=========================Real estate services==========
+        elif text == '1*2*3':
+            response ="CON Enter Your Fullname \n"
+        elif nicole =='1*2*3' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter  Your District " 
+        elif nicole =='1*2*3' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Service Provider'
+            sector ='Real estate services'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
+            response ="END Thank you for registering "   
 
-        # #=========================internet services==========
-        # elif text == '1*2*4':
-        #     response ="CON Enter Your Fullname \n"
-        # elif nicole =='1*2*4' and int(len(level))== 4 and str(level[3]) in str(level):
-        #     response ="CON Enter  Your District " 
-        # elif nicole =='1*2*4' and int(len(level))== 5 and str(level[4]) in str(level):
-        #     category = 'Service Provider'
-        #     sector ='Internet services'
-        #     fullname= str(level[3])
-        #     district=str(level[4])
-        #     reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-        #     reg.save()
-        #     response ="END Thank you for registering " 
+        #=========================internet services==========
+        elif text == '1*2*4':
+            response ="CON Enter Your Fullname \n"
+        elif nicole =='1*2*4' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter  Your District " 
+        elif nicole =='1*2*4' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Service Provider'
+            sector ='Internet services'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
+            response ="END Thank you for registering " 
 
-        # #=========================insurance==========
-        # elif text == '1*2*5':
-        #     response ="CON Enter Your Fullname \n"
-        # elif nicole =='1*2*5' and int(len(level))== 4 and str(level[3]) in str(level):
-        #     response ="CON Enter  Your District " 
-        # elif nicole =='1*2*5' and int(len(level))== 5 and str(level[4]) in str(level):
-        #     category = 'Service Provider'
-        #     sector ='Insurance services'
-        #     fullname= str(level[3])
-        #     district=str(level[4])
-        #     reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-        #     reg.save()
-        #     response ="END Thank you for registering " 
+        #=========================insurance==========
+        elif text == '1*2*5':
+            response ="CON Enter Your Fullname \n"
+        elif nicole =='1*2*5' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter  Your District " 
+        elif nicole =='1*2*5' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Service Provider'
+            sector ='Insurance services'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
+            response ="END Thank you for registering " 
 
-        # #=========================translation services==========
-        # elif text == '1*2*6':
-        #     response ="CON Enter Your Fullname \n"
-        # elif nicole =='1*2*6' and int(len(level))== 4 and str(level[3]) in str(level):
-        #     response ="CON Enter  Your District " 
-        # elif nicole =='1*2*6' and int(len(level))== 5 and str(level[4]) in str(level):
-        #     category = 'Service Provider'
-        #     sector ='Translation services'
-        #     fullname= str(level[3])
-        #     district=str(level[4])
-        #     reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-        #     reg.save()
-        #     response ="END Thank you for registering " 
+        #=========================translation services==========
+        elif text == '1*2*6':
+            response ="CON Enter Your Fullname \n"
+        elif nicole =='1*2*6' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter  Your District " 
+        elif nicole =='1*2*6' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Service Provider'
+            sector ='Translation services'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
+            response ="END Thank you for registering " 
 
-        # #=========================app developer==========
-        # elif text == '1*2*7':
-        #     response ="CON Enter Your Fullname \n"
-        # elif nicole =='1*2*7' and int(len(level))== 4 and str(level[3]) in str(level):
-        #     response ="CON Enter  Your District " 
-        # elif nicole =='1*2*7' and int(len(level))== 5 and str(level[4]) in str(level):
-        #     category = 'Service Provider'
-        #     sector ='App developer services'
-        #     fullname= str(level[3])
-        #     district=str(level[4])
-        #     reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-        #     reg.save()
-        #     response ="END Thank you for registering " 
+        #=========================app developer==========
+        elif text == '1*2*7':
+            response ="CON Enter Your Fullname \n"
+        elif nicole =='1*2*7' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter  Your District " 
+        elif nicole =='1*2*7' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Service Provider'
+            sector ='App developer services'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
+            response ="END Thank you for registering " 
 
-        # #=========================others==========
-        # elif text == '1*2*8':
-        #     response ="CON Enter Your Fullname \n"
-        # elif nicole =='1*2*8' and int(len(level))== 4 and str(level[3]) in str(level):
-        #     response ="CON Enter  Your District " 
-        # elif nicole =='1*2*8' and int(len(level))== 5 and str(level[4]) in str(level):
-        #     category = 'Service Provider'
-        #     sector ='other services'
-        #     fullname= str(level[3])
-        #     district=str(level[4])
-        #     reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-        #     reg.save()
-        #     response ="END Thank you for registering "                       
+        #=========================others==========
+        elif text == '1*2*8':
+            response ="CON Enter Your Fullname \n"
+        elif nicole =='1*2*8' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter  Your District " 
+        elif nicole =='1*2*8' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'Service Provider'
+            sector ='other services'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
+            response ="END Thank you for registering "                       
 
 
 
 
        
 
-        # #===========MSMEs registration
-        # elif text == '1*3':
-        #     response ="CON Which business to register for Ihuzo \n"
-        #     response +="1. AgriBusiness\n"
-        #     response +="2. Schools&training providers\n"
-        #     response +="3. Multimedia&Photography\n"
-        #     response +="4. ICT products&Services\n"
-        #     response +="5. Retail shops&wholesalersn"
-        #     response +="6. Travel tours,hotels&restaurants\n"
-        #     response +="7. Arts,crafts&fashion\n"
-        #     response +="8. Others\n"
+        #===========MSMEs registration
+        elif text == '1*3':
+            response ="CON Which business to register for Ihuzo \n"
+            response +="1. AgriBusiness\n"
+            response +="2. Schools&training providers\n"
+            response +="3. Multimedia&Photography\n"
+            response +="4. ICT products&Services\n"
+            response +="5. Retail shops&wholesalersn"
+            response +="6. Travel tours,hotels&restaurants\n"
+            response +="7. Arts,crafts&fashion\n"
+            response +="8. Others\n"
               
 
-        # #===========agritech
-        # elif text == '1*3*1':
-        #     response ="CON Enter Your Fullname \n"
-        # elif nicole =='1*3*1' and int(len(level))== 4 and str(level[3]) in str(level):
-        #     response ="CON Enter Your District "     
-        # elif nicole =='1*3*1' and int(len(level))== 5 and str(level[4]) in str(level):
-        #     category = 'MSMEs'
-        #     sector ='AgriBusiness'
-        #     fullname= str(level[3])
-        #     district=str(level[4])
-        #     reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-        #     reg.save()
-        #     response ="END Thank you for registering "   
+        #===========agritech
+        elif text == '1*3*1':
+            response ="CON Enter Your Fullname \n"
+        elif nicole =='1*3*1' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter Your District "     
+        elif nicole =='1*3*1' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'MSMEs'
+            sector ='AgriBusiness'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
+            response ="END Thank you for registering "   
 
-        # #===========edtech
-        # elif text == '1*3*2':
-        #     response ="CON Enter Your Fullname \n"
-        # elif nicole =='1*3*2' and int(len(level))== 4 and str(level[3]) in str(level):
-        #     response ="CON Enter Your District "
-        # elif nicole =='1*3*2' and int(len(level))== 5 and str(level[4]) in str(level):
-        #     category = 'MSMEs'
-        #     sector ='Education'
-        #     fullname= str(level[3])
-        #     district=str(level[4])
-        #     reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-        #     reg.save()
-        #     response ="END Thank you for registering "
+        #===========edtech
+        elif text == '1*3*2':
+            response ="CON Enter Your Fullname \n"
+        elif nicole =='1*3*2' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter Your District "
+        elif nicole =='1*3*2' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'MSMEs'
+            sector ='Education'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
+            response ="END Thank you for registering "
 
-        # #===========Multimedia
-        # elif text == '1*3*3':
-        #     response ="CON Enter Your Fullname \n"
-        # elif nicole =='1*3*3' and int(len(level))== 4 and str(level[3]) in str(level):
-        #     response ="CON Enter Your District "  
-        # elif nicole =='1*3*3' and int(len(level))== 5 and str(level[4]) in str(level):
-        #     category = 'MSMEs'
-        #     sector ='Multimedia'
-        #     fullname= str(level[3])
-        #     district=str(level[4])
-        #     reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-        #     reg.save()
-        #     response ="END Thank you for registering "  
+        #===========Multimedia
+        elif text == '1*3*3':
+            response ="CON Enter Your Fullname \n"
+        elif nicole =='1*3*3' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter Your District "  
+        elif nicole =='1*3*3' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'MSMEs'
+            sector ='Multimedia'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
+            response ="END Thank you for registering "  
 
-        # #===========ICT 
-        # elif text == '1*3*4':
-        #     response ="CON Enter Your Fullname \n"
-        # elif nicole =='1*3*4' and int(len(level))== 4 and str(level[3]) in str(level):
-        #     response ="CON Enter Your District "
-        # elif nicole =='1*3*4' and int(len(level))== 5 and str(level[4]) in str(level):
-        #     category = 'MSMEs'
-        #     sector ='ICT products&services'
-        #     fullname= str(level[3])
-        #     district=str(level[4])
-        #     reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-        #     reg.save()
-        #     response ="END Thank you for registering "
+        #===========ICT 
+        elif text == '1*3*4':
+            response ="CON Enter Your Fullname \n"
+        elif nicole =='1*3*4' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter Your District "
+        elif nicole =='1*3*4' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'MSMEs'
+            sector ='ICT products&services'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
+            response ="END Thank you for registering "
 
-        # #===========trading
-        # elif text == '1*3*5':
-        #     response ="CON Enter Your Fullname \n"
-        # elif nicole =='1*3*5' and int(len(level))== 4 and str(level[3]) in str(level):
-        #     response ="CON Enter Your District "
-        # elif nicole =='1*3*5' and int(len(level))== 5 and str(level[4]) in str(level):
-        #     category = 'MSMEs'
-        #     sector ='Trading'
-        #     fullname= str(level[3])
-        #     district=str(level[4])
-        #     reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-        #     reg.save()
-        #     response ="END Thank you for registering "     
+        #===========trading
+        elif text == '1*3*5':
+            response ="CON Enter Your Fullname \n"
+        elif nicole =='1*3*5' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter Your District "
+        elif nicole =='1*3*5' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'MSMEs'
+            sector ='Trading'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
+            response ="END Thank you for registering "     
 
-        # #===========tourism
-        # elif text == '1*3*6':
-        #     response ="CON Enter Your Fullname "+str(len(level))+"\n"
-        # elif nicole =='1*3*6' and int(len(level))== 4 and str(level[3]) in str(level):
-        #     response ="CON Enter Your District "   
-        # elif nicole =='1*3*6' and int(len(level))== 5 and str(level[4]) in str(level):
-        #     category = 'MSMEs'
-        #     sector = 'Tourism'
-        #     fullname= str(level[3])
-        #     district=str(level[4])
-        #     reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-        #     reg.save()
-        #     response ="END Thank you for registering "          
+        #===========tourism
+        elif text == '1*3*6':
+            response ="CON Enter Your Fullname "+str(len(level))+"\n"
+        elif nicole =='1*3*6' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter Your District "   
+        elif nicole =='1*3*6' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'MSMEs'
+            sector = 'Tourism'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
+            response ="END Thank you for registering "          
 
-        # #===========arts&crafts
-        # elif text == '1*3*7':
-        #     response ="CON Enter Your Fullname "+str(len(level))+"\n"
-        # elif nicole =='1*3*7' and int(len(level))== 4 and str(level[3]) in str(level):
-        #     response ="CON Enter Your District "
-        # elif nicole =='1*3*7' and int(len(level))== 5 and str(level[4]) in str(level):
-        #     category = 'MSMEs'
-        #     sector = 'Arts&Crafts'
-        #     fullname= str(level[3])
-        #     district=str(level[4])
-        #     reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-        #     reg.save()
-        #     response ="END Thank you for registering "  
+        #===========arts&crafts
+        elif text == '1*3*7':
+            response ="CON Enter Your Fullname "+str(len(level))+"\n"
+        elif nicole =='1*3*7' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter Your District "
+        elif nicole =='1*3*7' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'MSMEs'
+            sector = 'Arts&Crafts'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
+            response ="END Thank you for registering "  
 
-        # #===========other business
-        # elif text == '1*3*8':
-        #     response ="CON Enter Your Fullname "+str(len(level))+"\n"
-        # elif nicole =='1*3*8' and int(len(level))== 4 and str(level[3]) in str(level):
-        #     response ="CON Enter Your District "
-        # elif nicole =='1*3*8' and int(len(level))== 5 and str(level[4]) in str(level):
-        #     category = 'MSMEs'
-        #     sector = 'Others'
-        #     fullname= str(level[3])
-        #     district=str(level[4])
-        #     reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-        #     reg.save()
-        #     response ="END Thank you for registering "      
+        #===========other business
+        elif text == '1*3*8':
+            response ="CON Enter Your Fullname "+str(len(level))+"\n"
+        elif nicole =='1*3*8' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter Your District "
+        elif nicole =='1*3*8' and int(len(level))== 5 and str(level[4]) in str(level):
+            category = 'MSMEs'
+            sector = 'Others'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
+            response ="END Thank you for registering "      
 
 
 
