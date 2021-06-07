@@ -62,9 +62,9 @@ def ussdapp(request):
            #===========amaduka
         elif text == '1*1':
             response ="CON Andika amazina yawe \n"
-        elif nicole =='1*1' and int(len(level))== 3 and str(level[2]) in str(level):
+        elif nicole =='1*1' and int(len(level))== 2 and str(level[1]) in str(level):
             response = "CON Andika akarere utuyemo"
-        elif nicole == '1*1'and int(len(level))== 4 and str(level[3]) in str(level):
+        elif nicole == '1*1'and int(len(level))== 3 and str(level[2]) in str(level):
         
             category = 'Amaduka'
            
