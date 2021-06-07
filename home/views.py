@@ -43,7 +43,7 @@ def ussdapp(request):
         response =""
         numb = text[:3]
 
-        nicole = text[:5]
+        nicole = text[:3]
         if text =='':
             response = "CON MURAKAZA NEZA KURI MSMES GO DIGITAL\n "
             response +=" AGURA UBUCURUZI BWAWE WIFASHIJE IKORANABUHANGA\n"
