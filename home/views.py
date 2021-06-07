@@ -62,9 +62,9 @@ def ussdapp(request):
            #===========amaduka
         elif text == '1*1':
             response ="CON Andika amazina yawe \n"
-        elif nicole =='1*1*1' and int(len(level))== 4 and str(level[3]) in str(level):
+        elif nicole =='1*1' and int(len(level))== 4 and str(level[3]) in str(level):
             response = "CON Andika akarere utuyemo"
-        elif nicole == '1*1*1'and int(len(level))== 5 and str(level[4]) in str(level):
+        elif nicole == '1*1'and int(len(level))== 5 and str(level[4]) in str(level):
         
             category = 'Amaduka'
            
@@ -81,76 +81,113 @@ def ussdapp(request):
 
       
       
-          #=========================RTN==========
-        elif text == '1*1*2':
-            response ="CON Enter Your Fullname \n"
-        elif nicole =='1*1*2' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Enter Your District " 
-        elif nicole =='1*1*2' and int(len(level))== 5 and str(level[4]) in str(level):
-            category = 'Iworkers'
-            sector ='RTN'
+          #=========================Amafunguro==========
+        elif text == '1*2':
+            response ="CON Andika amazina yawe \n"
+        elif nicole =='1*2' and int(len(level))== 4 and str(level[3]) in str(level):
+            response = "CON Andika akarere utuyemo"
+        elif nicole == '1*2'and int(len(level))== 5 and str(level[4]) in str(level):
+        
+            category = 'Amafunguro'
+           
             fullname= str(level[3])
             district=str(level[4])
-            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            # namect=len(fullname)
+            # dis=district.count()
+            # if name >=2: 
+            reg = Msmes(category=category,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
             reg.save()
-            response ="END Thank you for registering "    
+            response = "END Murakoze Kwiyandikisha "   
 
-        #=========================ABADASOBWA==========
-        elif text == '1*1*3':
-            response ="CON Enter Your Fullname \n"
-        elif nicole =='1*1*3' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Enter Enter Your District " 
-        elif nicole =='1*1*3' and int(len(level))== 5 and str(level[4]) in str(level):
-            category = 'Iworkers'
-            sector ='ABADASOBWA'
+        #=========================Hotel==========
+        elif text == '1*3':
+            response ="CON Andika amazina yawe \n"
+        elif nicole =='1*3' and int(len(level))== 4 and str(level[3]) in str(level):
+            response = "CON Andika akarere utuyemo"
+        elif nicole == '1*3'and int(len(level))== 5 and str(level[4]) in str(level):
+        
+            category = 'Hotel'
+           
             fullname= str(level[3])
             district=str(level[4])
-            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            # namect=len(fullname)
+            # dis=district.count()
+            # if name >=2: 
+            reg = Msmes(category=category,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
             reg.save()
-            response ="END Thank you for registering "    
+            response = "END Murakoze Kwiyandikisha "
 
 
-         #=========================DIGITAL AMBASSADOR==========
-        elif text == '1*1*4':
-            response ="CON Enter Your Fullname \n"
-        elif nicole =='1*1*4' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Enter Your District " 
-        elif nicole =='1*1*4' and int(len(level))== 5 and str(level[4]) in str(level):
-            category = 'Iworkers'
-            sector ='Digital Ambsasador'
+         #=========================Dubuhinzi==========
+        elif text == '1*4':
+            response ="CON Andika amazina yawe \n"
+        elif nicole =='1*4' and int(len(level))== 4 and str(level[3]) in str(level):
+            response = "CON Andika akarere utuyemo"
+        elif nicole == '1*4'and int(len(level))== 5 and str(level[4]) in str(level):
+        
+            category = 'Ubuhinzi'
+           
             fullname= str(level[3])
             district=str(level[4])
-            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            # namect=len(fullname)
+            # dis=district.count()
+            # if name >=2: 
+            reg = Msmes(category=category,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
             reg.save()
-            response ="END Thank you for registering "    
+            response = "END Murakoze Kwiyandikisha "  
 
-         #=========================freelancers==========
-        elif text == '1*1*5':
-            response ="CON Enter Your Fullname \n"
-        elif nicole =='1*1*5' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Enter Your District " 
-        elif nicole =='1*1*5' and int(len(level))== 5 and str(level[4]) in str(level):
-            category = 'Iworker'
-            sector ='Freelancers'
+         #=========================Ubwubatsi==========
+        elif text == '1*5':
+            response ="CON Andika amazina yawe \n"
+        elif nicole =='1*5' and int(len(level))== 4 and str(level[3]) in str(level):
+            response = "CON Andika akarere utuyemo"
+        elif nicole == '1*5'and int(len(level))== 5 and str(level[4]) in str(level):
+        
+            category = 'Ubwubatsi'
+           
             fullname= str(level[3])
             district=str(level[4])
-            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            # namect=len(fullname)
+            # dis=district.count()
+            # if name >=2: 
+            reg = Msmes(category=category,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
             reg.save()
-            response ="END Thank you for registering "    
+            response = "END Murakoze Kwiyandikisha "   
 
-        #=========================other iworker==========
-        elif text == '1*1*6':
-            response ="CON Enter Your Fullname \n"
-        elif nicole =='1*1*6' and int(len(level))== 4 and str(level[3]) in str(level):
-            response ="CON Enter Your District " 
-        elif nicole =='1*1*6' and int(len(level))== 5 and str(level[4]) in str(level):
-            category = 'Iworker'
-            sector ='Others'
+        #=========================Ubugeni==========
+        elif text == '1*6':
+            response ="CON Andika amazina yawe \n"
+        elif nicole =='1*6' and int(len(level))== 4 and str(level[3]) in str(level):
+            response = "CON Andika akarere utuyemo"
+        elif nicole == '1*6'and int(len(level))== 5 and str(level[4]) in str(level):
+        
+            category = 'Ubugeni'
+           
             fullname= str(level[3])
             district=str(level[4])
-            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            # namect=len(fullname)
+            # dis=district.count()
+            # if name >=2: 
+            reg = Msmes(category=category,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
             reg.save()
-            response ="END Thank you for registering "      
+            response = "END Murakoze Kwiyandikisha "      
+
+        elif text == '1*7':
+            response ="CON Andika amazina yawe \n"
+        elif nicole =='1*7' and int(len(level))== 4 and str(level[3]) in str(level):
+            response = "CON Andika akarere utuyemo"
+        elif nicole == '1*7'and int(len(level))== 5 and str(level[4]) in str(level):
+        
+            category = 'Ubundi bucuruzi'
+           
+            fullname= str(level[3])
+            district=str(level[4])
+            # namect=len(fullname)
+            # dis=district.count()
+            # if name >=2: 
+            reg = Msmes(category=category,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
+            response = "END Murakoze Kwiyandikisha "    
 
 
 
