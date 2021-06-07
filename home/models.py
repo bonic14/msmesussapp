@@ -17,7 +17,7 @@ class SessionsModel(models.Model):
     def __str__(self):
         return self.sessionID
 
-class Ihuzo(models.Model):
+class Msmes(models.Model):
     category =models.CharField(max_length=255)
     sector =models.CharField(max_length=255)
     Fullname = models.CharField(max_length=255)   

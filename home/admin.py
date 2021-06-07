@@ -5,6 +5,6 @@ from import_export.admin import ImportExportModelAdmin
 # admin.site.register(Employees)
 
 admin.site.register(SessionsModel)
-@admin.register(Ihuzo)
-class IhuzoAdmin(ImportExportModelAdmin):
+@admin.register(Msmes)
+class MsmesAdmin(ImportExportModelAdmin):
     pass

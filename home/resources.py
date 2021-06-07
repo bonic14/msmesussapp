@@ -1,6 +1,6 @@
 from import_export import resources
-from .models import Ihuzo
+from .models import Msmes
 
-class IhuzoResource(resources.ModelResource):
+class MsmesResource(resources.ModelResource):
     class Meta:
-        model = Ihuzo
+        model = Msmes
