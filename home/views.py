@@ -141,7 +141,7 @@ def ussdapp(request):
             # reg.save()
             response ="END Thank you for registering "    
 
-       =
+       
         elif text == '1*1*6':
             response ="CON Enter Your Fullname \n"
         elif nicole =='1*1*6' and int(len(level))== 4 and str(level[3]) in str(level):
