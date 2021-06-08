@@ -50,10 +50,13 @@ def ussdapp(request):
             response +="2. Kinyarwanda"
         elif text == '1':
             # update = SessionsModel.objects.filter(sessionID=session_id).update(newsession='')
-            response ="CON Register Here To The MSMEs GO DIGITAL\n"
-            response +="1. Become an Iworkers\n"
-            response +="2. Service Provider\n"
-            response +="3. Business\n"
+            response ="CON Register Here To The MSMEs GO DIGITAL for different Sectors\n"
+            response +="1. Wholesaler\n"
+            response +="2. Food and Beveranges\n"
+            response +="3. Hotel and Restaurant\n"
+            response +="4. AgriBusiness\n"
+            response +="5. \n"
+            response +="6. Others"
 
            #===========become iworkers registration
         elif text == '1*1':
@@ -61,9 +64,7 @@ def ussdapp(request):
             response +="1. CAN Agents \n"
             response +="2. RTN Agents\n"
             response +="3. ABADASOBWA\n"
-            response +="4. Digital Ambsasador\n"
-            response +="5. Klab Freelancers \n"
-            response +="6. Others\n"
+            
             # response +="0. Go Black"
              #=========================CAN==========
  
@@ -455,9 +456,9 @@ def ussdapp(request):
           
         elif text =='2*1':
             response ="CON Andika amazina yawe \n"
-        elif nicole =='2*1' and int(len(level))== 4 and str(level[3]) in str(level):
+        elif nicole =='2*1' and int(len(level))== 3 and str(level[2]) in str(level):
             response = "CON Andika akarere utuyemo"
-        elif nicole == '2*1'and int(len(level))== 5 and str(level[4]) in str(level):
+        elif nicole == '2*1'and int(len(level))== 4 and str(level[3]) in str(level):
             # category = 'Iworkers'
             # sector ='CAN'
             # fullname= str(level[3])
@@ -471,7 +472,7 @@ def ussdapp(request):
         
             
 
-         #=========================RTN==========
+
         elif text == '2*1*2':
             response ="CON Andika amazina yawe \n"
         elif nicole =='2*1*2' and int(len(level))== 4 and str(level[3]) in str(level):
