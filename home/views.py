@@ -45,37 +45,41 @@ def ussdapp(request):
 
         nicole = text[:5]
         if text =='':
-            response = "CON MURAKAZA NEZA KURI MSMES GO DIGITAL\n "
-            response +=" AGURA UBUCURUZI BWAWE WIFASHIJE IKORANABUHANGA\n"
-            response +="1.Kwiyandikisha"
-            
+            response = "CON Welcome to MSMEs GO DIGITAL  \n "
+            response +="1. English \n"
+            response +="2. Kinyarwanda"
         elif text == '1':
             # update = SessionsModel.objects.filter(sessionID=session_id).update(newsession='')
-            response ="CON Register Here To The Digital Commerce Partners For Your Business \n"
-            response +="1. Amaduka\n"
-            response +="2. Service Provider\n"
-            response +="3. Business\n"
+            response ="CON MSMEs GO DIGITAL Expand your business on Digatal Platforms\n"
+            response +="1. Register to MSMEs GO DIGITAL\n"
+            
            #===========become iworkers registration
         elif text == '1*1':
+            response =" CON Choose Different Sector \n"
+            response +="1. Wholesales \n"
+            response +="2. RTN Agents\n"
+            response +="3. ABADASOBWA\n"
+            response +="4. Digital Ambsasador\n"
+            response +="5. Klab Freelancers \n"
+            response +="6. Others\n"
+            # response +="0. Go Black"
+             #=========================CAN==========
+ 
+        elif text == '1*1*1':
             response ="CON Enter Your Fullname \n"
         elif nicole =='1*1*1' and int(len(level))== 4 and str(level[3]) in str(level):
             response ="CON Enter Your District "
         elif nicole =='1*1*1' and int(len(level))== 5 and str(level[4]) in str(level):
-            # category = 'Iworkers'
-            # sector ='CAN'
-            # fullname= str(level[3])
-            # district=str(level[4])
-            # # namect=len(fullname)
-            # # dis=district.count()
-            # # if name >=2: 
-            # reg = Msmes(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-            # reg.save()
+            category = 'Iworkers'
+            sector ='CAN'
+            fullname= str(level[3])
+            district=str(level[4])
+            # namect=len(fullname)
+            # dis=district.count()
+            # if name >=2: 
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response = "END Thank you for registering "
-            # response +="0. Go Black"
-             #=========================CAN==========
- 
-        # elif text == '1*1*1':
-            
             # else:
             # response = "END Please Fill this space "+namect
 
@@ -91,7 +95,7 @@ def ussdapp(request):
             sector ='RTN'
             fullname= str(level[3])
             district=str(level[4])
-            reg = Msmes(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
             reg.save()
             response ="END Thank you for registering "    
 
@@ -438,14 +442,13 @@ def ussdapp(request):
 
              #====================iyandikishe mukinyarwanda biratangiye==================
         elif text =='2':
-            response ="CON Kwiyandikisha mu guhuzwa n’umufasha mu bucuruzi\n"
-            response +="1. Kuba umuhuza\n"
-            response +="2. Utanga serivisi\n"
-            response +="3. Ubucuruzi buto, ubuciriritse n’uburinganiye\n"
+            response ="CON AGURA UBUCURUZI BWAWE WIFASHIJIJE IKORANABUHANGA\n"
+            response +="1. Kwiyandikisha mu guhuzwa n’umufasha mu bucuruzi\n"
+            
           
         elif text =='2*1':
-            response ="CON Kwiyandikisha nk’umuhuza \n"
-            response +="1. Umukozi wa CAN\n"
+            response ="CON Ingeriz'ubucuruzi \n"
+            response +="1. Amaduka\n"
             response +="2. Umukozi wa RTN\n"
             response +="3. ABADASOBWA\n"
             response +="4. Umuhuza mu ikoranabuhanga\n"
