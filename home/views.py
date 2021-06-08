@@ -58,9 +58,9 @@ def ussdapp(request):
            #===========become iworkers registration
         elif text == '1*1':
             response ="CON Enter Your Fullname \n"
-        elif nicole =='1*1*1' and int(len(level))== 3 and str(level[2]) in str(level):
-            response ="CON Enter Your District "
         elif nicole =='1*1*1' and int(len(level))== 4 and str(level[3]) in str(level):
+            response ="CON Enter Your District "
+        elif nicole =='1*1*1' and int(len(level))== 5 and str(level[4]) in str(level):
             # category = 'Iworkers'
             # sector ='CAN'
             # fullname= str(level[3])
