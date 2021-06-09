@@ -18,8 +18,8 @@ class SessionsModel(models.Model):
         return self.sessionID
 
 class Msmes(models.Model):
-    category =models.CharField(max_length=255)
-    # sector =models.CharField(max_length=255)
+    # category =models.CharField(max_length=255)
+    sector =models.CharField(max_length=255)
     Fullname = models.CharField(max_length=255)   
     phoneNumber = models.CharField(max_length=255)
     email = models.CharField(max_length=255,default='')
