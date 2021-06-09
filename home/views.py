@@ -81,20 +81,17 @@ def ussdapp(request):
             # else:
             # response = "END Please Fill this space "+namect
 
-      
-      
-          
         elif text == '1*1*2':
             response ="CON Enter Your Fullname \n"
         elif nicole =='1*1*2' and int(len(level))== 4 and str(level[3]) in str(level):
             response ="CON Enter Your District " 
         elif nicole =='1*1*2' and int(len(level))== 5 and str(level[4]) in str(level):
-            # category = 'Iworkers'
-            # sector ='RTN'
-            # fullname= str(level[3])
-            # district=str(level[4])
-            # reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-            # reg.save()
+            
+            sector ='Food & Beverages'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Msmes(sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Thank you for registering "    
 
         
@@ -103,12 +100,11 @@ def ussdapp(request):
         elif nicole =='1*1*3' and int(len(level))== 4 and str(level[3]) in str(level):
             response ="CON Enter Enter Your District " 
         elif nicole =='1*1*3' and int(len(level))== 5 and str(level[4]) in str(level):
-            # category = 'Iworkers'
-            # sector ='ABADASOBWA'
-            # fullname= str(level[3])
-            # district=str(level[4])
-            # reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-            # reg.save()
+            sector ='Hotel&Restaurant'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Msmes(sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Thank you for registering "    
 
 
@@ -118,12 +114,11 @@ def ussdapp(request):
         elif nicole =='1*1*4' and int(len(level))== 4 and str(level[3]) in str(level):
             response ="CON Enter Your District " 
         elif nicole =='1*1*4' and int(len(level))== 5 and str(level[4]) in str(level):
-            # category = 'Iworkers'
-            # sector ='Digital Ambsasador'
-            # fullname= str(level[3])
-            # district=str(level[4])
-            # reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-            # reg.save()
+            sector ='Agribusiness'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Msmes(sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Thank you for registering "    
 
         elif text == '1*1*5':
@@ -131,12 +126,11 @@ def ussdapp(request):
         elif nicole =='1*1*5' and int(len(level))== 4 and str(level[3]) in str(level):
             response ="CON Enter Your District " 
         elif nicole =='1*1*5' and int(len(level))== 5 and str(level[4]) in str(level):
-            # category = 'Iworker'
-            # sector ='Freelancers'
-            # fullname= str(level[3])
-            # district=str(level[4])
-            # reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-            # reg.save()
+            sector ='Constrution Material'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Msmes(sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Thank you for registering "    
 
        
@@ -145,12 +139,12 @@ def ussdapp(request):
         elif nicole =='1*1*6' and int(len(level))== 4 and str(level[3]) in str(level):
             response ="CON Enter Your District " 
         elif nicole =='1*1*6' and int(len(level))== 5 and str(level[4]) in str(level):
-            # category = 'Iworker'
-            # sector ='Others'
-            # fullname= str(level[3])
-            # district=str(level[4])
-            # reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-            # reg.save()
+            
+            sector ='Arts&crafts'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Msmes(sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Thank you for registering "      
 
         elif text == '1*1*7':
@@ -158,12 +152,12 @@ def ussdapp(request):
         elif nicole =='1*1*7' and int(len(level))== 4 and str(level[3]) in str(level):
             response ="CON Enter Your District " 
         elif nicole =='1*1*7' and int(len(level))== 5 and str(level[4]) in str(level):
-            # category = 'Iworker'
-            # sector ='Others'
-            # fullname= str(level[3])
-            # district=str(level[4])
-            # reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-            # reg.save()
+            
+            sector ='Other'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Msmes(sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Thank you for registering "      
 
 
@@ -193,88 +187,83 @@ def ussdapp(request):
             response +="7. Ubundi Bucuruzi"
             
 
-         #=========================CAN==========
+        
         elif text == '2*1*1':
             response ="CON Andika amazina yawe \n"
         elif nicole =='2*1*1' and int(len(level))== 4 and str(level[3]) in str(level):
             response = "CON Andika akarere utuyemo"
         elif nicole == '2*1*1'and int(len(level))== 5 and str(level[4]) in str(level):
-            # category = 'Iworkers'
-            # sector ='CAN'
-            # fullname= str(level[3])
-            # district=str(level[4])
-            # reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-            # reg.save()   
+            sector ='Retail shops&wholesalers'
+            fullname= str(level[3])
+            district=str(level[4])
+            # namect=len(fullname)
+            # dis=district.count() 
+            reg = Msmes(sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()  
             response ="END Murakoze kwiyandikisha ku rubuga rwa MSMEs  "   
 
-         #=========================RTN==========
+
         elif text == '2*1*2':
             response ="CON Andika amazina yawe \n"
         elif nicole =='2*1*2' and int(len(level))== 4 and str(level[3]) in str(level):
             response = "CON Andika akarere utuyemo"
         elif nicole == '2*1*2'and int(len(level))== 5 and str(level[4]) in str(level):
-            # category = 'Iworkers'
-            # sector ='RTN'
-            # fullname= str(level[3])
-            # district=str(level[4])
-            # reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-            # reg.save()  
+            sector ='Food & Beverages'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Msmes(sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()  
             response ="END Murakoze kwiyandikisha ku rubuga rwa MSMEs "    
 
-        #=========================ABADASOBWA==========
         elif text == '2*1*3':
             response ="CON Andika amazina yawe \n"
         elif nicole =='2*1*3' and int(len(level))== 4 and str(level[3]) in str(level):
             response = "CON Andika akarere utuyemo"
         elif nicole == '2*1*3'and int(len(level))== 5 and str(level[4]) in str(level):
-            # category = 'Iworkers'
-            # sector ='ABADASOBWA'
-            # fullname= str(level[3])
-            # district=str(level[4])
-            # reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-            # reg.save()  
+            sector ='Hotel&Restaurant'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Msmes(sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save() 
             response ="END Murakoze kwiyandikisha ku rubuga rwa MSMEs "    
 
 
-         #=========================UMUHUZA MU IKORANABUHANGA==========
+         
         elif text == '2*1*4':
             response ="CON Andika amazina yawe \n"
         elif nicole =='2*1*4' and int(len(level))== 4 and str(level[3]) in str(level):
             response = "CON Andika akarere utuyemo"
         elif nicole == '2*1*4'and int(len(level))== 5 and str(level[4]) in str(level):
-            # category = 'Iworkers'
-            # sector ='Digital Ambsasador'
-            # fullname= str(level[3])
-            # district=str(level[4])
-            # reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-            # reg.save()  
+            sector ='Agribusiness'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Msmes(sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()  
             response ="END Murakoze kwiyandikisha ku rubuga rwa MSMEs "    
 
-         #=========================freelancers==========
+       
         elif text == '2*1*5':
             response ="CON Andika amazina yawe \n"
         elif nicole =='2*1*5' and int(len(level))== 4 and str(level[3]) in str(level):
             response = "CON Andika akarere utuyemo"
         elif nicole == '2*1*5'and int(len(level))== 5 and str(level[4]) in str(level): 
-            # category = 'Iworker'
-            # sector ='Freelancers'
-            # fullname= str(level[3])
-            # district=str(level[4])
-            # reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-            # reg.save() 
+            sector ='Constrution Material'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Msmes(sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Murakoze kwiyandikisha ku rubuga rwa MSMEs " 
-         #=========================izindi serivisi==========
+       
         elif text == '2*1*6':
             response ="CON Andika amazina yawe \n"
         elif nicole =='2*1*6' and int(len(level))== 4 and str(level[3]) in str(level):
             response = "CON Andika akarere utuyemo"
         elif nicole == '2*1*6'and int(len(level))== 5 and str(level[4]) in str(level): 
-            # category = 'Iworker'
-            # sector ='Others'
-            # fullname= str(level[3])
-            # district=str(level[4])
-            # reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-            # reg.save() 
+            sector ='Arts&crafts'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Msmes(sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save()
             response ="END Murakoze kwiyandikisha ku rubuga rwa MSMEs  "  
 
         elif text == '2*1*7':
@@ -282,12 +271,11 @@ def ussdapp(request):
         elif nicole =='2*1*7' and int(len(level))== 4 and str(level[3]) in str(level):
             response = "CON Andika akarere utuyemo"
         elif nicole == '2*1*7'and int(len(level))== 5 and str(level[4]) in str(level): 
-            # category = 'Iworker'
-            # sector ='Others'
-            # fullname= str(level[3])
-            # district=str(level[4])
-            # reg = Ihuzo(category=category,sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
-            # reg.save() 
+            sector ='Other'
+            fullname= str(level[3])
+            district=str(level[4])
+            reg = Msmes(sector=sector,Fullname=fullname,District=district,phoneNumber=phone_number,email='')
+            reg.save() 
             response ="END Murakoze kwiyandikisha ku rubuga rwa MSMEs "       
             
 
