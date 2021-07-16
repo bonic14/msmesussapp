@@ -8,8 +8,8 @@ from rest_framework.parsers import JSONParser
 from .serializers import*
 from django.http import HttpResponse
 from .models import Msmes
-username = "nsabihamiss@gmail.com"
-api_key = "7a6e5b772d94fc4af67cb8e9ac0b656af8ab659b27e422c2a1105d374bcb4662"
+username = "ihuzo-rwanda"
+api_key = "b93b4aa62515beb627442898bf8c6415baba7dd8bded3aefb93d53389f7f2150"
 africastalking.initialize(username,api_key)
 # Create your views here.
 def welcome(request):
