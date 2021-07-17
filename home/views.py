@@ -172,7 +172,7 @@ def ussdapp(request):
 
              #====================iyandikishe mukinyarwanda biratangiye==================
         elif text =='2':
-            response ="CON AGURA UBUCURUZI BWAWE WIFASHIJIJE IKORANABUHANGA\n"
+            response ="CON AGURA UBUCURUZI BWAWE WIFASHISHIJE IKORANABUHANGA\n"
             response +="1. Kwiyandikisha mu guhuzwa n’umufasha mu bucuruzi\n"
             
           
